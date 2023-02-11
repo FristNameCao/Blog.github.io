@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>flex布局</title>
+      <link href="/2023/02/11/flex%E5%B8%83%E5%B1%80/"/>
+      <url>/2023/02/11/flex%E5%B8%83%E5%B1%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="flex"><a href="#flex" class="headerlink" title="flex:"></a>flex:</h1><p>大号的行内布局</p><h3 id="外层元素-flex-container-flex-容器"><a href="#外层元素-flex-container-flex-容器" class="headerlink" title="外层元素: flex container flex 容器"></a>外层元素: flex container flex 容器</h3><p>flex 窗口的子元素: flex item flex 元素</p><ul><li><p>flex-wrap:wrap 折行</p></li><li><p>flex-grow:0; &#x2F;_ 扩张权重_&#x2F;宽度的权重 默认为 0</p></li><li><p>flex-grow:0.x; &#x2F;<em>按照百分比获取剩余空间</em>&#x2F; 所有求和不超过 100%也就是 1 生效</p></li><li><p>flex-shrink:; &#x2F;<em>收缩系数</em>&#x2F; 默认 1</p></li><li><ul><li><p>不是 flex item 的 flex 父元素从外面看就像块元素一样<br>如宽度会打满包含块<br>但是子元素的 margin 不会超出去<br>但是相邻的元素垂直方向的 margin 还是会合并的</p></li><li><p>收缩或者扩张都不会让元素超出自己 min-w&#x2F;h 以及 max-w&#x2F;h 设定 的尺寸<br>收缩不能收到比自己的 min-width 还小<br>扩张不能扩张到比自己的 max-width 还大<br>收缩只发生在不折行的时候<br>因为如果折行就不可能存在空间不够的情况<br>flex 父元素”垂直”方向上的额外空间,只会均等的分配给每一行<br>当高度固定了如果还有额外空间用 height:auto;会自动分配填满</p></li></ul><h3 id="flex-父元素用来调用子元素摆放属性-justify-content"><a href="#flex-父元素用来调用子元素摆放属性-justify-content" class="headerlink" title="flex 父元素用来调用子元素摆放属性 justify-content"></a>flex 父元素用来调用子元素摆放属性 justify-content</h3><pre><code>* justify-content  设定一&quot;行&quot;的元素在行中的&quot;水平&quot;分布 start 项目与容器的左侧对齐。 end 项目与容器的右侧对齐 center 项目在容器的中心对齐 space-between 项目以相等的间距显示。 space-around 项目以等间距显示 space-evenly 平均分配物品</code></pre><p>项目在它们周围有相等的空间</p></li></ul><h5 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h5><p>设定一”行”的元素在行中的”垂直”分布<br>start 项目与容器顶部对齐</p><p>end 项目与容器底部对齐</p><p>center 项目在容器的垂直中心对</p><p>baseline 项目显示在容器的基线处</p><p>stretch 物品被拉伸以适合容器</p><ul><li><h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><p>​ 设定所有行(“行们”)在父元素垂直方向的分布<br>(设置父元素垂直方向上额外空间的分配)</p><pre><code> start flex-start: 线装在容器的顶部 end flex-end: 线装在容器的底部 center center: 线在容器的垂直中心包装 space-between：行以相等的间距显示 两边对齐   space-around  行以相等的间距显示在它们周围 space-evenly平均分配物品   项目在它们周围有相等的空间   stretch(额外空间均分给每一行)：线条被拉伸以适合容器   flex父元素&quot;垂直&quot;方向上的额外空间,只会均等的分配给每一行 * 不是flex item的flex父元素从外面看就像块元素一样如宽度会打满包含块   但是子元素的margin不会超出去   但是相邻的元素垂直方向的margin还是合并的</code></pre></li></ul><h3 id="flex-子元素用来调整自身摆放属性"><a href="#flex-子元素用来调整自身摆放属性" class="headerlink" title="flex 子元素用来调整自身摆放属性"></a>flex 子元素用来调整自身摆放属性</h3><pre><code>   align-self 类似align-items,但是只调整自己   order 调整自己的显示顺序(不是层叠顺序)   flex子元素不用定位就可以使用z-index属性  flex: 在一个属性上直接设置flex子元素的flex-grow flex-shrink flex-basis</code></pre><ul><li><p>flex: auto;</p><pre><code>flex-grow: 1;flex-shrink: 1;flex-basis: auto;</code></pre></li><li><p>flex: 1;</p><pre><code>flex-grow: 1;flex-shrink: 1;flex-basis: 0%;</code></pre></li><li><p>flex: 0;</p><pre><code>flex-grow: 0;flex-shrink: 1;flex-basis: 0%;</code></pre></li><li><p>flex: 100px;</p><pre><code>flex-grow: 1;flex-shrink: 1;flex-basis: 100px;</code></pre></li><li><ul><li><p>flex-basis: 设定元素在主轴方向上的初始尺寸<br>当主轴水平时，它相当于 width</p><p>当主轴垂直时，它相当于 height</p><p>当它与 width&#x2F;height 一起用的时候，如果 flex-basis 的<br>值不为 auto，则它更优先</p></li></ul></li></ul><h3 id="flex-父元素的轴向-flex-direction"><a href="#flex-父元素的轴向-flex-direction" class="headerlink" title="flex 父元素的轴向:flex-direction"></a>flex 父元素的轴向:flex-direction</h3><pre><code>flex-direction: 设定主轴方向row 向右 项目的放置与文本方向相同row-reverse 向左 项目放置在与文本方向相反的位置column 向下 项目从上到下放置column-reverse 向上  项目从下到上放置</code></pre><h3 id="flex-wrap-设定交叉轴方向-交叉轴肯定跟主轴是垂直的"><a href="#flex-wrap-设定交叉轴方向-交叉轴肯定跟主轴是垂直的" class="headerlink" title="flex-wrap 设定交叉轴方向,交叉轴肯定跟主轴是垂直的"></a>flex-wrap 设定交叉轴方向,交叉轴肯定跟主轴是垂直的</h3><p>wrap 垂直与主轴,向右或向下</p><ul><li><p>项目环绕到其他行 ，类似于折行</p></li><li></li><li><p>wrap-reverse 垂直与主轴,向左或向上</p></li><li><p>项目反向环绕到附加行。</p></li><li><p>nowrap 每个项目都适合一行</p></li><li><p>不设定交叉轴方向,即不折行,所有元素在同一行或同一列</p></li><li></li><li><p>flex-flow 在一个属性上直接设置 flex-direction 和<br>flex-wrap 换行</p><p>flex-flow: wrap column; 换行 向下 项目从上到下放置</p><p>flex-grow 设定主轴方向上额外空间的分配<br>flex-shrink 设定主轴方向上空间收缩的系数</p><h2 id="flex-flow-弹性容器"><a href="#flex-flow-弹性容器" class="headerlink" title="flex-flow 弹性容器"></a>flex-flow 弹性容器</h2><p>*_ &#x2F;_ flex-flow: &lt;’flex-direction’&gt; *&#x2F;</p><p>flex-flow: row; 向右 项目的放置与文本方向相同</p><p>flex-flow: row-reverse; 向左 项目放置在与文本方向相反的位置</p><p>flex-flow: column; 向下 项目从上到下放置</p><p>flex-flow: column-reverse; 设置反转</p><p>&#x2F;_ flex-flow: &lt;’flex-wrap’&gt; _&#x2F;</p><p>flex-flow: nowrap;</p><p>flex-flow: wrap; 换行</p><p>flex-flow: wrap-reverse;</p><p>&#x2F;_ flex-flow: &lt;’flex-direction’&gt; and &lt;’flex-wrap’&gt; _&#x2F;</p><p>flex-flow: row nowrap;</p><p>flex-flow: column wrap;</p><p>flex-flow: column-reverse wrap-reverse;</p><p>&#x2F;_ Global values _&#x2F;</p><p>flex-flow: inherit;</p><p>flex-flow: initial;</p><p>flex-flow: revert;</p><p>flex-flow: revert-layer;</p><p>flex-flow: unset;</p><p>​</p></li></ul><h4 id="flex-父元素中的匿名文本"><a href="#flex-父元素中的匿名文本" class="headerlink" title="flex 父元素中的匿名文本"></a>flex 父元素中的匿名文本</h4><pre><code>flex父元素中的匿名文本相当于将该文本包进一个标签但不给该标签设置任何属性但它会受到flex父元素 justify-content, align-items, align-content属性的影响flex子元素的的margin：auto会均等的分配额外的空间，但晚于flex-grow对空间的占用</code></pre><h2 id="gap"><a href="#gap" class="headerlink" title="gap"></a>gap</h2><pre><code>设置在flex父元素用于指定子元素之间的间隙gap: &lt;row-gap&gt; &lt;column-gap&gt;;row-gap:column-gap: 行内flex元素,外面看是行内,里面看是flexdisplay: inline-flex 定位flex元素,外面看是定位,里面看是flexdisplay: flex;position: absolute;浮动flex元素,外面看是浮动,里面看是flexdisplay: flex;float: left;</code></pre><p><img src="D:\Blog\source_posts\flex.jpg" alt="flex"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> flex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一篇博客</title>
+      <link href="/2023/02/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2023/02/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这是我的第一篇hexo博客</p><p><img src="https://cdn.pixabay.com/photo/2021/10/01/18/53/corgi-6673343__340.jpg" alt="11"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> tags </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/02/11/hello-world/"/>
+      <url>/2023/02/11/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

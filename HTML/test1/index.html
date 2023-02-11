@@ -1,0 +1,1387 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>HTML | 乔治Blog</title><meta name="author" content="乔治"><meta name="copyright" content="乔治"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="HTML Hyper Text Markup Language  引入  与 markdown 同为标记语言  只不过标记的方式不一样  嵌套规则  与【数学公式】几乎一模一样  树状（递归）结构  其实我们会发现，递归结构在数学与计算机里出现的非常之多  树木 数学公式 文件树 编程语言的语法规则 书籍的目录 公司的组织架构 房子 都是树形结构 标签   lskdfjwoejflkjsdf a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://example.com/HTML/test1/index.html">
+<meta property="og:site_name" content="乔治Blog">
+<meta property="og:description" content="HTML Hyper Text Markup Language  引入  与 markdown 同为标记语言  只不过标记的方式不一样  嵌套规则  与【数学公式】几乎一模一样  树状（递归）结构  其实我们会发现，递归结构在数学与计算机里出现的非常之多  树木 数学公式 文件树 编程语言的语法规则 书籍的目录 公司的组织架构 房子 都是树形结构 标签   lskdfjwoejflkjsdf a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png">
+<meta property="article:published_time" content="2023-02-11T14:23:18.000Z">
+<meta property="article:modified_time" content="2023-02-11T15:25:21.436Z">
+<meta property="article:author" content="乔治">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/HTML/test1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 乔治","link":"链接: ","source":"来源: 乔治Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTML',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2023-02-11 23:25:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Blog/themes/butterfly/source/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类:</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HTML/"><i class="fa-fw fas fa-bars"></i><span> HTML</span></a></li><li><a class="site-page child" href="/CSS/"><i class="fa-fw fas fa-code"></i><span> CSS</span></a></li><li><a class="site-page child" href="/Javascript/"><i class="fa-fw hidden"></i><span> JavaScript</span></a></li><li><a class="site-page child" href="/TypeScript/"><i class="fa-fw hidden"></i><span> TypeScript</span></a></li><li><a class="site-page child" href="/Vue/"><i class="fa-fw hidden"></i><span> Vue</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="乔治Blog"><span class="site-name">乔治Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类:</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HTML/"><i class="fa-fw fas fa-bars"></i><span> HTML</span></a></li><li><a class="site-page child" href="/CSS/"><i class="fa-fw fas fa-code"></i><span> CSS</span></a></li><li><a class="site-page child" href="/Javascript/"><i class="fa-fw hidden"></i><span> JavaScript</span></a></li><li><a class="site-page child" href="/TypeScript/"><i class="fa-fw hidden"></i><span> TypeScript</span></a></li><li><a class="site-page child" href="/Vue/"><i class="fa-fw hidden"></i><span> Vue</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">HTML</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><ul>
+<li><p>HTML Hyper Text Markup Language</p>
+</li>
+<li><p>引入</p>
+</li>
+<li><p>与 markdown 同为标记语言</p>
+<ul>
+<li><p>只不过标记的方式不一样</p>
+</li>
+<li><p>嵌套规则</p>
+</li>
+<li><p>与【数学公式】几乎一模一样</p>
+</li>
+<li><p>树状（递归）结构</p>
+</li>
+<li><p>其实我们会发现，递归结构在数学与计算机里出现的非常之多</p>
+<ul>
+<li>树木</li>
+<li>数学公式</li>
+<li>文件树</li>
+<li>编程语言的语法规则</li>
+<li>书籍的目录</li>
+<li>公司的组织架构</li>
+<li>房子</li>
+<li>都是树形结构<ul>
+<li>标签</li>
+</ul>
+</li>
+<li><div>lskdfj<span>woejfl</span>kjsdf</div></li>
+<li><div>aaa<span>bbb</div>ccc</span></li>
+</ul>
+<ul>
+<li>&lt;起始标签&gt;&lt;&#x2F;结束标签&gt;</li>
+<li>&lt;自闭合标签&gt;</li>
+<li>&lt;自闭合标签 &#x2F;&gt; <img/> <hr/> <base /> <meta /> <link /> <input /><ul>
+<li>空标签，void element&#x2F;tag</li>
+<li>self closing tag</li>
+<li><div></div>    <div/></li>
+</ul>
+</li>
+<li>有些特定标签，即使里面是空的，也不能写成自闭合形式</li>
+</ul>
+<ul>
+<li>script&#x2F;iframe&#x2F;canvas</li>
+<li><canvas></canvas><br>&#96;<script src="xxx.js" foo="bar" foo=bar><div>您的浏览浏览器不支持js，请在设置中开启相应的功能</div>
+</script>`
+* 歧义</li>
+</ul>
+<ul>
+<li>在 html5 中，完全可以不用给自闭合标签打结束符 <br> <br /></li>
+<li>事实上，即使是有些非自闭合标签（如 p，li），在一些情况下也是可以省略结束标签的，<strong>而且，是完全符合 html 标准的</strong><ul>
+<li>这种场景一般是可以【推断出】此标签肯定已经结束了</li>
+<li>例如<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>aaa<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">```</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>w3 的文档中对每一个标签在什么情况下可以省略结束标签都做了详细说明 - 例： <a target="_blank" rel="noopener" href="https://www.w3.org/TR/html-markup/p.html">https://www.w3.org/TR/html-markup/p.html</a></p>
+<ul>
+<li><p>一般不推荐省略结束标签，原因很简单，省略那么多，人会看不明白，也背不下来那么多规则 * <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories">https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories</a></p>
+</li>
+<li><p>缩进 indent</p>
+<ul>
+<li><p>一般来说，现在前端社区里面都是缩进<strong>两个空格</strong></p>
+<ul>
+<li>对于 markdown，完全也可以只缩进两个空格，我之所以推荐大家缩进 4 个空格，主要是 md 有太多的查看器，效果各不兼容</li>
+</ul>
+</li>
+<li><p>一个标签如果被一个标签包含在内，则它相对于这个标签缩进一个层级</p>
+</li>
+<li><p>如果一个标签里面只有纯文字，则可以直接把文字包含在标签内而不缩进</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;a.jpg&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;a.pdf&quot;</span>&gt;</span> 点击下载 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>he<span class="tag">&lt;<span class="name">strong</span>&gt;</span>ll<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>o<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>aaabb sl<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>你在哪里呢 asdfkljsdlf asdf asdf asdf<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>我<span class="tag">&lt;<span class="name">span</span>&gt;</span>在<span class="tag">&lt;/<span class="name">span</span>&gt;</span>这里<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>一般来说，非<strong>块级标签</strong>（关于什么是块级标签，以后会提到）在内容不多的情况下可以选择不缩进，如</p>
+<pre><code> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      点击打开</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://jd.com&quot;</span>&gt;</span>京东<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+ <!-- * 语义化
+   * 语义化是前端开发里面的一个专用术语，其优点在于标签语义化有助于构架良好的html结构，有利于搜索引擎的建立索引、抓取；另外，亦有利于页面在不同的设备上显示尽可能相同；此外，亦有利于构建清晰的机构，有利于团队的开发、维护。————维基百科
+   * 说人话：合适的内容用合适的标签 -->
+
+   <div foo="ba'r" foz=baz contenteditable="true"  >jL</div>
+
+   <INPUT TYPE=checkbox disabled required="required" checked='checked' >
+   <INPUT TYPE='checkbox' disabled required="required" checked='checked' >
+   <video id="ojfwife" class="foo bar baz" controls=controls loop="loop" autoplay>
+</li>
+<li><p>属性<br>_ 每一个标签可以接受一个或多个属性<br>_ 属性可以有值，也可以没有<br>_ 属性名不区分大小写，属性值区分大小写的<br>_ 属性的值一般使用双引号包起来<br>_ 也可以使用单引号<br>_ 但当属性的值里没有空格，引号等特殊字符时，属性值是<strong>完全可以</strong>不用引号包起来的<br>_ 如下列出一些，通用/全局属性(Global Attributes)，即可以用在所有元素上面且有实际意义 + id 属性，在不学 js 的情况下，也可以有地方要用到<br>_ 标签在整个页面唯一的值<br>_ 一般来说起成一个单一的单词，不以数字开头，没有空格 + name 属性，标签的名字，现在主要用在表单类标签上面 + title 属性，鼠标在上面时显示的 tooltip 文本<br>_ alt 属性，主要用在 img 标签上<br>_ 指定在图片加载失败的时候的替换文本<br>_ <img src="/url.jpg" alt="描述文本"><br>_ <img alt="描述文本" title="描述文本" src="url.jpg"><br>_<br>_ alternative 可选项，替补，或者<br>_ alternate<br>_ alter 修改<br>_ alert 警钟 + class="foo bar" 类别，类名<br>_ 空格分隔的单词列表（word,foo-bar）<br>_ comma/space separated list + style 属性，用于给标签指定内联样式 + tabindex + contenteditable(5) + data-*<br>_ <div isbn="567890">书籍详情</div><br>_ 文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes</a> * Google：html Global Attributes</p>
+<ul>
+<li><p>data-* 属性</p>
+</li>
+<li><p>如何在 html 内表示这些用来表示 html 自身的字符呢</p>
+<ul>
+<li><p>如<>="</p>
+</li>
+<li><p>&char_name;</p>
+</li>
+<li><p>&#decimal;</p>
+</li>
+<li><p>&#xHEX;</p>
+</li>
+<li><p>所以下面的写法其实是一样的</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">abc <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span> abc     def   <span class="tag">&lt;/<span class="name">span</span>&gt;</span>  bbb</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  a <span class="tag">&lt;<span class="name">i</span>&gt;</span> foo bar</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上面的写当于下面的写法，【严格注意】空格<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>abc def <span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span>foo bar<span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>_ 如何不用 CSS 让空格不被合并呢？<br>_ html 实体：&nbsp;，但注意这个不是真的空格<br>_ 实际的 ascii 编码是 160<br>_ Non Breaking Space</p>
+<ul>
+<li><p>以下介绍各个标签</p>
+<ul>
+<li><p>html</p>
+<ul>
+<li><p>对于 xhtml 页面来说，根元素可以是其它标签</p>
+<ul>
+<li><p>根标签 root element</p>
+<ul>
+<li>一个页面只能有一个</li>
+<li>没有的话，浏览器也会自动添加<!DOCTYPE HTML>
+<html></html>
+{[() ()]}</li>
+</ul>
+</li>
+<li><p>head</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/joshbuchea/HEAD">https://github.com/joshbuchea/HEAD</a></p>
+</li>
+<li><p>头部标签，放一些与页面相关的“元信息”，比如：</p>
+<ul>
+<li><p>页面的编码方式</p>
+<ul>
+<li><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code><ul>
+<li>chartset：字符集</li>
+<li>meta：元</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>编码方式又是一个很大的话题</li>
+<li>一般的乱码都是因为编码方式引起的</li>
+</ul>
+</li>
+<li><p>页面的标题，即 title 标签</p>
+</li>
+<li><p>页面的图标，即浏览器标题栏左边显示的那个小图标</p>
+<ul>
+<li><p>页面图标可以用一个标签来设置</p>
+<ul>
+<li><code>&lt;link rel(ation)=&quot;icon&quot; href=&quot;http://www.baidu.com/img/favicon.png&quot;&gt;</code></li>
+<li>对于<a href="http://example.com/lksjdfasdfjasfd/asdfa/sdf/asd/fasdf/a.html">http://example.com/lksjdfasdfjasfd/asdfa/sdf/asd/fasdf/a.html</a></li>
+</ul>
+<ul>
+<li><a href="http://example.com/favicon.ico">http://example.com/favicon.ico</a></li>
+</ul>
+</li>
+<li><p>也可以不用一个标签设置，浏览器会自动读取网站根目录下的 favicon.ico 这个文件</p>
+<ul>
+<li>例如：<a target="_blank" rel="noopener" href="http://www.baidu.com/favicon.ico">http://www.baidu.com/favicon.ico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>比如页面的样式表</p>
+<ul>
+<li>style/<link rel="stylesheet" href="a.css"></li>
+</ul>
+</li>
+<li><p>甚至页面可以在这里选择使用哪个引擎渲染</p>
+<ul>
+<li>国产很多双核浏览器支持这种模式<ul>
+<li>浏览器普及</li>
+</ul>
+</li>
+<li><meta name="UA-X-Compatable" content="EDGE" />
+* cutting edge
+* bleeding edge</li>
+</ul>
+</li>
+<li><p>在移动端，还可以定义页面以多宽的尺寸渲染等</p>
+<ul>
+<li>viewport,视口</li>
+<li><meta name="viewport" content="width=500" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>head 里的内容不会被显示在页面上</p>
+</li>
+<li><p>不存在的话，也会自动添加</p>
+</li>
+</ul>
+</li>
+<li><p>body</p>
+<ul>
+<li><p>想要在页面中被显示出来的内容都放在这个标签里面</p>
+</li>
+<li><p>如果页面没有 html 或者 body 标签，浏览器会自动添加，并将页面内容包含在 body 里面</p>
+<ul>
+<li><p>但浏览器同时也会将那些必须放在 head 里的标签放进 head 里面，比如 title 标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>页面标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面的代码会被浏览器解析为下面的结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;!doctype html&gt; 这一行不会自动添加的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>页面标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同时，如果在 body 或者 html 标签的<strong>结束标签之后</strong>又出现了其它的标签，则之前的结束标签就会被认为无效，浏览器会自动添加结束标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  这行会被认为无效</span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面的代码相当于</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>title</p>
+<ul>
+<li>页面标题</li>
+<li>仅支持纯文本，不支持嵌套其它标签</li>
+<li>如果不出现在 head 内，将自动移到 head 内</li>
+<li>出现多个的话，仅第一个生效</li>
+</ul>
+</li>
+<li><p>h1-h6 标签</p>
+<ul>
+<li>header(标题) 1 到 6</li>
+<li>一级到六级标题</li>
+<li>默认情况下，标题上下会有一定的空白</li>
+<li>比较传统的观点认为一个页面不能出现超过一个 h1 标签，原因是为了 SEO<ul>
+<li>SEO 是什么？<ul>
+<li>Search Engine Optimism</li>
+<li>搜索 引擎 优化<ul>
+<li>讲白了就是如何布置页面能让页面在搜索结果中尽量靠前</li>
+<li>手段有很多种，请各们各行了解，SEO 本身也是 IT 行业里一个专业的职位<ul>
+<li>如关键字</li>
+<li>页面被引用的次数（反向链接数量）<ul>
+<li>交换链接</li>
+</ul>
+</li>
+<li>使用 https</li>
+<li>使页面的 html 更符合语义</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTML5 中新增了 hgroup（即 header group） 标签，大致用法如下：H5</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hgroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>三体<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>一部人类文明的诗史<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hgroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>  * 即当不同级别的标题显示在一起的时候可以用这个标签把hN标签归类
+  * 一般来说，这个标签可以替换以前使用div的场景
+</code></pre>
+</li>
+<li><p>p 标签</p>
+<ul>
+<li>paragraph</li>
+<li>语意是一个段落，当想要表达一段话时都可以使用这个标签</li>
+<li>默认情况下也会有上下边距</li>
+</ul>
+</li>
+<li><p>a 标签</p>
+<ul>
+<li><p>anchor, 锚</p>
+</li>
+<li><p>语义是一个链接，链接地址写在 href（Hyperlink REFerence）属性里</p>
+<ul>
+<li><p>可以链接到的类型非常多，而且一般来说是可扩展的</p>
+<ul>
+<li><p>绝对网址，fullpath</p>
+<ul>
+<li><code>&lt;a href=&quot;https://jd.com/&quot;&gt;京东&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li><p>页内特定位置跳转地址</p>
+<ul>
+<li><code>&lt;a href=&quot;#pos1&quot;&gt;&lt;/a&gt;</code></li>
+<li>例：<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element</a></li>
+</ul>
+</li>
+<li><p>其它页特定位置跳转地址</p>
+<ul>
+<li><code>&lt;a href=&quot;http://jd.com/#footer&quot;&gt;&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li><p>这个在书目的章节跳转在使用的比较多</p>
+</li>
+<li><p>相对路径</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://baidu.com/">baidu</a></p>
+</li>
+<li><p><a href="a.html">baidu</a></p>
+</li>
+<li><p><code>&lt;a href=&quot;.././../a/b/../index.html&quot;&gt;&lt;/a&gt;</code></p>
+</li>
+<li><p><code>&lt;a href=&quot;./index.html&quot;&gt;&lt;/a&gt;</code></p>
+</li>
+<li><p><code>&lt;a href=&quot;../index.html&quot;&gt;&lt;/a&gt;</code></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://a.com/a/b/c.html">http://a.com/a/b/c.html</a><ul>
+<li><a target="_blank" rel="noopener" href="http://a.com/a/b/index.html">http://a.com/a/b/index.html</a></li>
+<li><a target="_blank" rel="noopener" href="http://a.com/a/index.html">http://a.com/a/index.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>&lt;a href=&quot;/index.html&quot;&gt;&lt;/a&gt;</code></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://a.com/a/b/lkj/adsfa/sdf/c.html">http://a.com/a/b/lkj/adsfa/sdf/c.html</a></li>
+<li><a target="_blank" rel="noopener" href="http://a.com/index.html">http://a.com/index.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>电子邮件</p>
+<ul>
+<li><code>&lt;a href=&quot;mailto:aaa@bbb.com&quot;&gt;&lt;/a&gt;</code></li>
+<li><code>&lt;a href=&quot;mailto:aaa@bbb.com?title=1&amp;subject=2&amp;content=3&quot;&gt;&lt;/a&gt;</code><ul>
+<li>需要在电脑安装邮件客户端</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>电话号码　 tel:18611075877</p>
+<ul>
+<li>主要用在手机页面上</li>
+</ul>
+</li>
+<li><p>QQ/taobao 临时会话</p>
+<ul>
+<li>tencent://temp-chat?QQ=285696737</li>
+<li>thunder://ghjk;adfklasdhfkweuhfasdlfk</li>
+</ul>
+</li>
+<li><p>等等等等</p>
+<ul>
+<li>thunder://LKDJOIE7436239/</li>
+</ul>
+</li>
+<li><p>空的 href 属性 href="" href="."</p>
+<ul>
+<li>链接到当前页面<ul>
+<li>所以仅以#开头的值是中转到当前页面的特定位置</li>
+</ul>
+</li>
+<li><img src=""></li>
+<li>类似的，如果一个 img 标签的 src 属性为空，也将对应当前页面地址<ul>
+<li><a target="_blank" rel="noopener" href="https://www.nczonline.net/blog/2009/11/30/empty-image-src-can-destroy-your-site/">https://www.nczonline.net/blog/2009/11/30/empty-image-src-can-destroy-your-site/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>target 属性</p>
+<ul>
+<li>可以指定在哪个窗口打开链接<ul>
+<li>几个特殊值,关键字<ul>
+<li>_blank，链接在空白的窗口显示，也就相当于新打开一个窗口了</li>
+<li>_self，其实这个是默认值，就是在当前窗体打开</li>
+<li>_parent，链接在父窗体显示</li>
+<li>_top，链接在顶层窗体显示</li>
+</ul>
+</li>
+<li>自定义值<ul>
+<li>shopingcart，要求不能以_开头，出处：<a target="_blank" rel="noopener" href="https://www.w3.org/TR/html-markup/datatypes.html#common.data.browsing-context-name-def">https://www.w3.org/TR/html-markup/datatypes.html#common.data.browsing-context-name-def</a></li>
+<li>这点等讲到 iframe 等标签时再说<ul>
+<li>_parent</li>
+<li>_top 这两个属性也是需要讲到 iframe 时再提起</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在 html5 中，还有一个 download 属性<br>`</p>
+<ul>
+<li>表示点击这个链接将下载链接对应的文件，而不是跳转到目标页面，下载的文件名以 download 属性的值来命名<ul>
+<li><code>&lt;a href=&quot;xxx/jianai.pdf&quot; download=&quot;简爱.pdf&quot;&gt;点我下截《简爱》完整版&lt;/a&gt;</code></li>
+<li>只能触发下载自己网站上的资源，只能在真正的网址上使用，即 url 以 http 开头</li>
+<li>问题，如果同时有 target=“_blank”，又有 download 属性，它如何行为呢？<ul>
+<li>请自行测试</li>
+</ul>
+</li>
+<li>为什么要有这个属性呢？传统浏览器中，要触发下载，需要服务端的支持，给出特定的 http 头才会触发浏览器下载而不是打开对应的内容<ul>
+<li>这个属性的出现可以让点击下载完全由前端来完成</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>img 标签</p>
+<ul>
+<li>image</li>
+<li>表示一张图片</li>
+<li><h2 id="用-src-source-属性表示图片的地址-同样也可以是绝对地址，相对地址-lt-img-src-quot-http-www-baidu-com-logo-png-quot-alt-quot-quot-title-quot-tooltip-quot-gt-lt-img-src-quot-abc-jpg-quot-alt-quot-quot-gt-lt-img-src-quot-abc-jpg-quot-alt-quot-quot-gt-hd-a-jpg-fhd-a-jpg"><a href="#用-src-source-属性表示图片的地址-同样也可以是绝对地址，相对地址-lt-img-src-quot-http-www-baidu-com-logo-png-quot-alt-quot-quot-title-quot-tooltip-quot-gt-lt-img-src-quot-abc-jpg-quot-alt-quot-quot-gt-lt-img-src-quot-abc-jpg-quot-alt-quot-quot-gt-hd-a-jpg-fhd-a-jpg" class="headerlink" title="用 src(source)属性表示图片的地址- 同样也可以是绝对地址，相对地址  - &lt;img src=&quot;http://www.baidu.com/logo.png&quot; alt=&quot;&quot; title=&quot;tooltip&quot;&gt;  - &lt;img src=&quot;../abc.jpg&quot; alt=&quot;&quot;&gt;  - &lt;img src=&quot;/abc.jpg&quot; alt=&quot;&quot;&gt;  -   - hd/a.jpg  - fhd/a.jpg"></a>用 src(source)属性表示图片的地址<br>- 同样也可以是绝对地址，相对地址<br>  - <code>&lt;img src=&quot;http://www.baidu.com/logo.png&quot; alt=&quot;&quot; title=&quot;tooltip&quot;&gt;</code><br>  - <code>&lt;img src=&quot;../abc.jpg&quot; alt=&quot;&quot;&gt;</code><br>  - <code>&lt;img src=&quot;/abc.jpg&quot; alt=&quot;&quot;&gt;</code><br>  - <img srcset="a.jpg 1x, b.jpg 2x, c.jpg 3x"><br>  - hd/a.jpg<br>  - fhd/a.jpg</h2><ul>
+<li>1366*768</li>
+<li>19 吋，1440*900</li>
+<li>mac pro 1440*900 2880 * 1800 2k</li>
+<li>1280*720/800</li>
+<li>23， 1920*1080 -> 0.3mm 1</li>
+<li>4k 1920<em>1080 3840</em>2160</li>
+<li>5k 1920*1200 * 4</li>
+<li>2 笔记本屏幕</li>
+<li>3 手机</li>
+<li>src 指定的图片可以是浏览器支持的任意图片格式<ul>
+<li>jpg/jpeg,png,bmp,gif,webp,svg,ico</li>
+<li>注意 psd 格式应该是不支持的，因为它是 photoshop 专有的格式，支持它需要大量的代码而且 psd 格式的文件一般很大，一般都在几十 M 上下</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>同时，用 alt 属性表示图片在加载失败时的替换文本<ul>
+<li>类似于 markdown 中图片的替换文档<code>![加载失败的替换文档](image source)</code>，事实上两者基本上是等同的</li>
+<li>alt 的全程是 alternative<ul>
+<li>自己查询这个单词的意思，就明白为啥用这个词了</li>
+<li>键盘上的 Alt 键是这个单词的前缀，即 alter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可以使用 width 和 height 属性定义图片的宽和高<ul>
+<li>只写一个的话另一个会根据图片原始比例计算出来</li>
+<li>图片一般来说有自己的宽高（natural width/height）</li>
+<li>但是图片加载往往需要时间，而图片在加载完成之前浏览器是不知道其宽高的，所以就会产生页面抖动的问题</li>
+<li>所以一般会在标签上把宽高写出来，这样图片加载过程中页面就不会抖动了</li>
+</ul>
+</li>
+<li>usemap="#themap"<ul>
+<li><map>
+   <area title="xxxx" href="xxx" shape="rect" coords="0,0,100,100">
+   <area title="xxxx" href="xxx" shape="circle" coords="0,0,100,100">
+   <area title="xxxx" href="xxx" shape="poly" coords="0,0,100,100">
+</map>
+- 可以让图片不同区域对应不同的链接
+- 后面说到map标签后再说</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>span 标签</p>
+<ul>
+<li><span class="price">10.00</span></li>
+<li><p> aaa <strong> bbb </strong> ccc </p></li>
+<li>是一个没有明确语义(通用语义)的标签</li>
+<li>一般来说想要给特定的内容加样式时可以用一个 span 标签将内容包起来<ul>
+<li>后面学到 css 就知道了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>div</p>
+</li>
+<li><p>br</p>
+<ul>
+<li>break</li>
+<li>换行</li>
+<li>自闭合标签</li>
+<li><br></li>
+</ul>
+</li>
+<li><p>hr</p>
+<ul>
+<li>horizontal</li>
+<li>水平分隔线</li>
+<li>自闭合标签</li>
+<li>强行写做<code>&lt;hr&gt;some text&lt;/hr&gt;</code>的话里面的内容会被移出标签<ul>
+<li>可以理解为没有</hr>标签</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>base 基准</p>
+<ul>
+<li><code>&lt;base href=&quot;页面中所有相对路径的基准地址&quot; target=&quot;页面中所有链接的打开位置&quot;&gt;</code><ul>
+<li>href 属性表示页面中所有<strong>相对路径</strong>的基础路径<ul>
+<li>一定要以/即目录结尾<ul>
+<li><code>&lt;base href=&quot;https://www.baidu.com/abc/&quot;&gt;</code></li>
+<li><code>&lt;base href=&quot;/&quot;&gt;</code>相当于<code>&lt;base href=&quot;https://www.baidu.com/&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>target 属性表示页面中<strong>所有链接</strong>的打开位置<ul>
+<li>当然，可以在页内的 a 标签中用它自己的 target 属性覆盖用 base 标签设置的全局打开位置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>有些框架等可能会利用这个特性</li>
+</ul>
+</li>
+<li><p>font/blink/marquee</p>
+<ul>
+<li><blink> lsk <font>jf</font> dowe </blink></li>
+<li><marquee> foo </marquee><ul>
+<li>deprecated 不推荐使用</li>
+<li>obsolete 已废弃</li>
+<li>字体<ul>
+<li>用 size 属性表示大小</li>
+<li>face 属性表示字体 fontface</li>
+<li>color 属性表示颜色</li>
+</ul>
+<ul>
+<li><font size="25px" face="幼圆" color="red"></font></li>
+</ul>
+</li>
+<li>已废弃</li>
+<li>早些年不用 css 时可以使用这个标签指定字体等</li>
+<li>所有已废弃的标签将不再提及</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>em</p>
+<ul>
+<li>emphasis</li>
+<li>语义为<strong>强调</strong></li>
+</ul>
+</li>
+<li><p>strong</p>
+<ul>
+<li>语义也为强调</li>
+<li>但强度跟 em 不同，strong 的强调更重一些</li>
+</ul>
+</li>
+<li><p>b bold</p>
+<ul>
+<li>只是样式上加粗</li>
+</ul>
+</li>
+<li><p>u underline</p>
+</li>
+<li><p>i italic</p>
+<ul>
+<li>多数网站会这个标签来表示图标</li>
+</ul>
+</li>
+<li><p>u underline</p>
+</li>
+<li><p>i</p>
+<ul>
+<li>italic，斜体的，一般编辑器（如 word）的斜体按钮就是用的一个斜着的 I 图标表示</li>
+<li>在以前，这个标签就是表示斜体文字的</li>
+<li>但 html5 中对其语义进行了明确<ul>
+<li>用来表示由于某些原因需要与普通文本区分的文本</li>
+</ul>
+</li>
+<li>默认情况下为斜体</li>
+<li>因为跟 icon 这个单词的首字母一样，很多人/框架/库也用这个标签来表示图标<ul>
+<li><a target="_blank" rel="noopener" href="http://fontawesome.io/">http://fontawesome.io/</a><ul>
+<li><code>&lt;i class=&quot;fa fa-star&quot;&gt;&lt;/i&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>&lt;!-- dfghjkl --&gt;</code></p>
+   <!-- 注释 -->
+
+<ul>
+<li><p>没有基础的同学可能对注释这个概念有点陌生</p>
+<ul>
+<li><p><strong>注释是对程序本身的解释，几乎不会对程序的行为造成任何影响</strong></p>
+<ul>
+<li><p>说几乎，是因为有些注释还是会对程序有一些影响</p>
+<ul>
+<li>几乎任意语言里都有注释<ul>
+<li>C/C++,JS,PHP，java 等语言// , /* */ comment block c style</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>bash 脚本（即命令行脚本），python - 以#做为注释</p>
+<ul>
+<li>css - 以/**/内的内容为注释 - xcolor: red;</li>
+</ul>
+</li>
+<li><p>html entity</p>
+<ul>
+<li>转义(escape)：html entity HTML 实体</li>
+</ul>
+</li>
+<li><p>&name;</p>
+<ul>
+<li>&#number; 十进制数，&#25105; 我</li>
+<li>&#xHHHH; 十六进制数,&#x6211;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hexdecimal</p>
+</li>
+<li><p>Unicode</p>
+</li>
+<li><p>常见具名 html 实体：</p>
+<ul>
+<li>&nbsp; non-breaking space 160 号空格</li>
+<li>&amp; &符 ampersand</li>
+</ul>
+</li>
+<li><p>&copy; 版权符</p>
+</li>
+<li><p>&lt; 小于号 little than</p>
+</li>
+<li><p>&gt; 大于号 greater than</p>
+</li>
+<li><p>&quot; 双引号 quote</p>
+</li>
+<li><p>&apos; 单引号</p>
+</li>
+<li><p>文档：</p>
+<ul>
+<li><p>Google： html entity</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://dev.w3.org/html5/html-author/charref">https://dev.w3.org/html5/html-author/charref</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html/html_entities.asp">http://www.w3school.com.cn/html/html_entities.asp</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/tags/html_ref_entities.html">http://www.w3school.com.cn/tags/html_ref_entities.html</a></p>
+</li>
+<li><p>[ square bracket ]</p>
+</li>
+<li><p>{ curly braces } mustcache</p>
+</li>
+<li><p>( parentheses )</p>
+</li>
+<li><p>; semicolon</p>
+</li>
+<li><p>: colon</p>
+</li>
+<li><p>, comma</p>
+<ul>
+<li><p>. period</p>
+</li>
+<li><p>/ slash</p>
+</li>
+<li><p>\ backslash</p>
+</li>
+<li><p>? question mark</p>
+</li>
+<li><ul>
+<li>plus sign</li>
+</ul>
+</li>
+<li><ul>
+<li>times star asterisk</li>
+</ul>
+</li>
+<li><p>| vertical | bar ||||||</p>
+</li>
+<li><p>! exclaimation</p>
+</li>
+<li><p>^ caret</p>
+</li>
+<li><h1 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h1></li>
+<li><p>`~~~</p>
+</li>
+<li><p>$ dollar</p>
+</li>
+<li><p>@ at</p>
+</li>
+<li><p>对空白字符的忽略 我 我</p>
+<ul>
+<li>默认情况下浏览器忽略文字与文字之间多于一个的空格，换行符会被全部忽略<ul>
+<li>当然 css 可以改变这种行为，后我们会看到</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>可访问性 accessibility a11y internationalizition i18n</p>
+</li>
+<li><p>在各个设备上访问/对各种人群可访问/视障/听障</p>
+</li>
+<li><p>读屏软件</p>
+</li>
+<li><p>windows<br>高对度主题</p>
+</li>
+<li><p>a r i a / role</p>
+</li>
+<li><p>accessibly rich Internet Application</p>
+</li>
+<li><p>网页应用程序</p>
+</li>
+<li><p>role 属性提示浏览器当前元素是一个何种视觉元素</p>
+</li>
+<li><p>role=""</p>
+</li>
+<li><p>aria-xxx="yyy"提示浏览器当前视觉元素的状态或其它信息</p>
+</li>
+</ul>
+</li>
+<li><p>pre</p>
+</li>
+<li><p>pre formatted</p>
+</li>
+<li><p>表示有预定义格式的文本</p>
+</li>
+<li><p>里面的内容的回车跟空格都会被保留</p>
+</li>
+<li><p>本来有个 width 属性，表示每行最多的字符</p>
+</li>
+</ul>
+<ul>
+<li>本来支持度也不好，然后在 html5 中被弃用了，因为可以用 css 来更精确的控制</li>
+</ul>
+<ul>
+<li><p>常与 code 标签 <code>配合</code> 使用，用来在<code>网页</code>里显示高亮过的代码</p>
+</li>
+<li><pre><code class="">code goes here</code></pre>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+   <p>  foo  <code> bar </code>   </p>
+</li>
+<li><p>列表类标签</p>
+<ul>
+<li><p>ol，ul</p>
+<ul>
+<li>Ordered List, Unordered List</li>
+<li>其直接子结点必须只能是 li 标签 list item<ul>
+<li>li 内可以是任意其它标签</li>
+</ul>
+</li>
+<li>默认会在每多一层级的列表中缩进</li>
+<li>并带有列表项标号，有序和无序的</li>
+</ul>
+<ul>
+<li>多个同类项的重复，就应该使用 ol/ul 标签</li>
+<li>LISP List Procressing SICP</li>
+<li>黑客与画家</li>
+</ul>
+</li>
+<li><p>dl</p>
+<ul>
+<li>Description List / define list</li>
+<li>dt<ul>
+<li>Description Term</li>
+</ul>
+</li>
+<li>dd<ul>
+<li>Description Description</li>
+</ul>
+</li>
+<li>一个列表项是<strong>一个 dt</strong>和<strong>一个或多个 dd</strong>一起算一组</li>
+<li>此标签与 ol/ul 有些区别，在于<ul>
+<li>一个 dt 可以对应多个 dd</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>老师<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>谢然<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>老师<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>谢然<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>学生<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>王五<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>表单标签</p>
+<ul>
+<li><p>form 标签</p>
+<ul>
+<li>input<ul>
+<li><a target="_blank" rel="noopener" href="https://www.google.com.hk/search?q=invalid+inentity+escape+in+regular+expression">https://www.google.com.hk/search?q=invalid+inentity+escape+in+regular+expression</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/36953775/firefox-error-unable-to-check-input-because-the-pattern-is-not-a-valid-regexp">https://stackoverflow.com/questions/36953775/firefox-error-unable-to-check-input-because-the-pattern-is-not-a-valid-regexp</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.fxsitecompat.com/en-CA/docs/2016/input-pattern-now-sets-u-flag-for-regular-expressions/">https://www.fxsitecompat.com/en-CA/docs/2016/input-pattern-now-sets-u-flag-for-regular-expressions/</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>属性<ul>
+<li>action<ul>
+<li>表单提交的地址</li>
+</ul>
+</li>
+<li>target<ul>
+<li>行为类似 a 标签的 target</li>
+</ul>
+</li>
+<li>method<ul>
+<li>表单提交方式<ul>
+<li>get<ul>
+<li>将表单字段拼成 querystring<ul>
+<li>什么是 querystring？<ul>
+<li><a target="_blank" rel="noopener" href="http://abc.com/?a=1&b=2&c=3">http://abc.com/?a=1&amp;b=2&amp;c=3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>post<ul>
+<li>这个等学到 http 再说</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>enctype，编码方式<ul>
+<li>在讲到 http 的时候再谈</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>input</p>
+<ul>
+<li>type 属性的各项值<ul>
+<li>text<ul>
+<li>文本</li>
+</ul>
+</li>
+<li>password<ul>
+<li>密码</li>
+</ul>
+</li>
+<li>checkbox<ul>
+<li>复选框</li>
+<li>以 name 相同分组</li>
+<li>checked 属性表示默认选中</li>
+</ul>
+</li>
+<li>radio<ul>
+<li>单选框</li>
+<li>剩余同上</li>
+</ul>
+</li>
+<li>file<ul>
+<li>accept<ul>
+<li>可以接受的文件类型</li>
+<li><code>&lt;input type=&quot;file&quot; name=&quot;&quot; id=&quot;&quot; accept=&quot;image/*,text/*&quot;&gt;</code></li>
+</ul>
+<ul>
+<li>MIME Type 媒体类型 Multipurpose Internet Mail Extensiion</li>
+</ul>
+<ul>
+<li><code>&lt;input type=&quot;file&quot; name=&quot;&quot; id=&quot;&quot; accept=&quot;.jpg,.png,.gif,.jpeg,.webp,.exe&quot; value=&quot;c:/user/xieran/desktop/a.pdf&quot;&gt;</code></li>
+</ul>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://wwww.a.com/favicon.ico">http://wwww.a.com/favicon.ico</a></li>
+</ul>
+</li>
+<li>安全问题</li>
+<li>multiple<ul>
+<li>是否支持多选文件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>.txt text/plain</li>
+<li>.js application/javascript</li>
+<li>.css text/css</li>
+<li>.html text/html</li>
+<li>.png image/png</li>
+<li>.jpg image/jpeg</li>
+<li>.gif image/gif</li>
+</ul>
+</li>
+<li>hidden<ul>
+<li>隐藏的输入域</li>
+<li>value 设置其值</li>
+<li>name 设置名字</li>
+</ul>
+</li>
+<li>为以下四个值时，都表现为按钮的样式，按钮上的文字需要用 value 属性来设置</li>
+<li>image<ul>
+<li>从功能上讲是一个表单提交按钮</li>
+<li>从形态上看是一个图片</li>
+<li>此时需要使用 src 属性指定图片的地址</li>
+<li>现在基本上不这么用，之所以有这个用法，是以前不用 js 时想做出漂亮的按钮时，需要这么用</li>
+<li>在 html5 中，可以在这种标签上给定 width 跟 height，类似 img 标签相应的属性，src，alt</li>
+</ul>
+</li>
+<li>button</li>
+<li>submit<ul>
+<li>单击时会触发表单的提交</li>
+</ul>
+</li>
+<li>reset<ul>
+<li>单击时会重置表单为初始状态</li>
+</ul>
+</li>
+<li><strong>以下为 html5 新增属性值</strong></li>
+<li>number<ul>
+<li>输入数字</li>
+</ul>
+<ul>
+<li>e,.,-</li>
+<li>-3.14e-8</li>
+<li></li>
+</ul>
+</li>
+<li>email<ul>
+<li>multiple</li>
+<li>使用半角逗号分隔每个地址</li>
+</ul>
+</li>
+<li>date</li>
+<li>datetime-local</li>
+<li>time</li>
+<li>week</li>
+<li>month</li>
+<li>url<ul>
+<li>protocal://user:password@domain:port/a/b/c/d.html?a=b&c=d#sldjfoiwjeofij</li>
+<li>百度.中国</li>
+</ul>
+</li>
+<li>tel</li>
+<li>range<ul>
+<li>min，4</li>
+<li>max，10</li>
+<li>step，2</li>
+</ul>
+</li>
+<li>color<ul>
+<li>value 将返回十六进制颜色#abcdef</li>
+</ul>
+</li>
+<li>不能识别的值，当做 text 来处理</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>input 的其它属性</p>
+<ul>
+<li><p>value</p>
+<ul>
+<li>为按钮形态时设置上面的文字</li>
+<li>为输入框时设置里面的默认内容<ul>
+<li>datetime-local<ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO_8601">https://zh.wikipedia.org/wiki/ISO_8601</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>name</p>
+<ul>
+<li>很重要，表单提交时，这个域/字段/框/FormControl 的名字</li>
+<li>同时，在 radio 和 checkbox 阵列里，name 相同的元素被分在一组里</li>
+</ul>
+</li>
+<li><p>disabled</p>
+<ul>
+<li>无值的属性</li>
+<li>禁用这个输入域</li>
+</ul>
+</li>
+<li><p>required</p>
+<ul>
+<li>设置这个输入域为必填项</li>
+<li>不填的话无法用<strong>正常手段</strong>触发表单提交</li>
+</ul>
+</li>
+<li><p>maxlength</p>
+<ul>
+<li>为文本输入框时设置输入的最大长度</li>
+</ul>
+</li>
+<li><p>minlength</p>
+<ul>
+<li>同上，但为设置最小长度</li>
+<li>不过兼容性不太好，不少浏览器没有实现<ul>
+<li>有点矛盾，不填的时候是空的，当然会非法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>placeholder</p>
+<ul>
+<li>占位符</li>
+<li>提示性文字，一旦输入内容就消失</li>
+</ul>
+</li>
+<li><p>autofocus</p>
+<ul>
+<li>自动获得焦点，即页面加载完后光标自动在这个元素内</li>
+</ul>
+</li>
+<li><p>tabindex</p>
+<ul>
+<li>按 tab 键在不同输入域之间跳转时的顺序</li>
+<li>会往顺序更大的元素跳</li>
+<li>为-1 的话会跳过那个元素</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>button</p>
+<ul>
+<li>type 属性<ul>
+<li>不写 type 属性的话，默认为 submit<ul>
+<li>即：无 type 的 button 的 type 属性默认为 submit</li>
+</ul>
+</li>
+<li><code>&lt;button type=&quot;reset/button/submit&quot;&gt;Submit&lt;/button&gt;</code></li>
+<li>button<ul>
+<li>常规按钮，功能上与 input[type="button"]一样</li>
+</ul>
+</li>
+<li>submit<ul>
+<li>提交按钮，功能上与 input[type="submit"]一样</li>
+</ul>
+</li>
+<li>reset<ul>
+<li>重置按钮，功能上与 input[type="reset"]一样</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>与<code>&lt;input type=&quot;button&quot; name=&quot;b&quot; value=&quot;lksjdf&quot;&gt;</code>的区别<ul>
+<li>input 的 button 只能在按钮上显示纯文字</li>
+<li>而 button 标签可以在按钮上显示其它内容比如图片（即嵌套其它标签），文字也可以设置不同颜色等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>label 标签</p>
+<ul>
+<li>一般与 checkbox 及 radio 一起用，以扩大这两个按钮的可点击区域，提升用户体验。当然，也可以跟其它元素一起用，不过一般没必要（比较典型的是与 input:file 一起用）</li>
+</ul>
+<ul>
+<li><p>for 属性</p>
+<ul>
+<li>为想要被扩大点击区域的元素的 id，不带井号</li>
+</ul>
+<ul>
+<li><p>细节：在 ie8 及以下不能用于 displaynone 的表单元素，可能是因为 not focusable</p>
+</li>
+<li><p>表单元素嵌套在 label 的时候可以不用 for 属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  有for的用法</span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;oneid&quot;</span>&gt;</span>One<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">onclick</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;oneid&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">  不用for的用法</span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> /&gt;</span> 男 <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>如下怎么算呢？</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;a&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;a&quot;</span>&gt;</span></span><br><span class="line">  lllll</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>典型的坑，两次点击，等学了 js 后再谈</p>
+</li>
+</ul>
+</li>
+<li><p>select name="sel"</p>
+<ul>
+<li>下拉选择框</li>
+<li>属性<ul>
+<li>multiple<ul>
+<li>无值属性，表示多选，多选时就不是下拉的样式了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>另外此标签在不同的系统里面样式差别很大，而且它的样式一般来说是取自系统自带的，所以很难被 css 控制<ul>
+<li>所以一些对 ui 要求比较高的网站都选择用其它元素模拟下拉框<ul>
+<li>例：小米路由器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>size 属性控制默认显示的数量，也即它的尺寸</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>option<ul>
+<li>value<ul>
+<li>选择了该项目后它所属的 select 元素的值</li>
+</ul>
+</li>
+<li>selected<ul>
+<li>默认被选中</li>
+</ul>
+</li>
+<li>disabled<ul>
+<li>表示该项被禁用</li>
+</ul>
+</li>
+<li>hidden<ul>
+<li>表示该项被隐藏</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>以上三个属性均无值</li>
+</ul>
+</li>
+<li>optgroup // hgroup colgroup<ul>
+<li>给 option 分组</li>
+<li>用 label 属性表示这个分组的名字</li>
+<li>无法被选中，只选择 option</li>
+<li>有一个 disabled 属性，如果设置了这个属性，整组标签都会被禁用<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">&quot;这是一个分组&quot;</span> <span class="attr">disabled</span> <span class="attr">hidden</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;01&quot;</span>&gt;</span>01<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;02&quot;</span>&gt;</span>02<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;03&quot;</span>&gt;</span>03<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;04&quot;</span>&gt;</span>04<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;05&quot;</span>&gt;</span>05<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>兼容性不确定，因为我没用过 mac。。。。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>textarea<ul>
+<li>多行文本输入框</li>
+<li>两个特殊属性<ul>
+<li>rows="3" 行</li>
+<li>cols="20" 列 column</li>
+</ul>
+<ul>
+<li>不过现在也不常用，一般都用 css 来控制了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fieldset 字段组 用来把 一组 输入域 放在一起的。<ul>
+<li>field 就是字段的意思，就是说一个表单输入域（输入框）</li>
+<li>这个标签用来给输入域分组，所以叫 set<ul>
+<li>set 本来就是组的意思</li>
+</ul>
+</li>
+<li>如果只是分组，完全可以用 div 等标签<ul>
+<li>那这个标签有什么用呢？</li>
+<li>fieldset 有个 disabled 属性，如果它有了这个属性，其内的所有输入域都将被禁用，类似 optgroup<ul>
+<li>在某些场景下是非常好用的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>legend<ul>
+<li>只能作为 field set 的子元素，用来标识这组输入域的名字，基本上没有其它用处<ul>
+<li>而且在有了 css 之后，这个标签基本也没有用武之地了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Blog/themes/butterfly/source/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">乔治</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://fristnamecao.github.io/Blog/"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FristNameCao" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:929877449@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><center>主域名：<br><a target="_blank" rel="noopener" href="https://fristnamecao.github.io/Blog/">乔治</a></center></div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">1.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-11T16:18:13.075Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By 乔治</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
