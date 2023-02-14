@@ -92,13 +92,25 @@
     
     
     <entry>
-      <title>563514</title>
-      <link href="/2023/02/14/563514/"/>
-      <url>/2023/02/14/563514/</url>
+      <title>常⻅的节点（Node）属性</title>
+      <link href="/2023/02/14/%E8%8A%82%E7%82%B9%EF%BC%88Node%EF%BC%89/"/>
+      <url>/2023/02/14/%E8%8A%82%E7%82%B9%EF%BC%88Node%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<p>163416</p>]]></content>
+        <content type="html"><![CDATA[<ul><li><p>nodeType </p><ul><li><p>获取节点的类型 </p></li><li><p>⽐如 注释节点8 ⽂本节点3 元素节点1</p></li></ul></li><li><p>tagName </p><ul><li>获取元素的标签名词 仅适⽤于Element节点</li></ul></li><li><p>nodeName </p><ul><li>获取元素的标签名词 适⽤于任何Node节点</li></ul></li><li><p>innerHTML,textContent </p><ul><li>前者将元素中的HTML获取为字符串属性 后者仅仅获取⽂本内容</li></ul></li><li><p>outerHTML </p><ul><li>包含了完整的HTML </li><li>相当于innerHTML加上元素本身</li></ul></li><li><p>nodeValue&#x2F;data </p><ul><li>获取⾮元素节点的⽂本内容</li></ul></li><li><p>hidden </p><ul><li>⽤于设置元素隐藏(全局属性)</li></ul></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> js基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 节点（Node) </tag>
+            
+        </tags>
       
     </entry>
     
@@ -130,13 +142,19 @@
     
     
     <entry>
-      <title>javascript</title>
-      <link href="/2023/02/14/javascript/"/>
-      <url>/2023/02/14/javascript/</url>
+      <title>DOM和document对象的理解</title>
+      <link href="/2023/02/14/DOM%E5%92%8Cdocument%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+      <url>/2023/02/14/DOM%E5%92%8Cdocument%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3/</url>
       
-        <content type="html"><![CDATA[<p>shenm13143651453614536</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="对DOM和document对象的理解"><a href="#对DOM和document对象的理解" class="headerlink" title="对DOM和document对象的理解"></a>对DOM和document对象的理解</h1><h2 id="DOM-⽂档对象模型-Document-Object-Model-将⻚⾯所有的内容表示为可以修改的对象"><a href="#DOM-⽂档对象模型-Document-Object-Model-将⻚⾯所有的内容表示为可以修改的对象" class="headerlink" title="DOM:⽂档对象模型(Document Object Model)将⻚⾯所有的内容表示为可以修改的对象"></a>DOM:⽂档对象模型(Document Object Model)将⻚⾯所有的内容表示为可以修改的对象</h2><ul><li><p>浏览器将我们编写在HTML中的每⼀个元素(Element)都抽象成了⼀个个对象 </p></li><li><p>所有这些对象都可以通过JavaScript来对其进⾏访问，那么我们就可以通过JavaScript来操作 </p></li><li><p>⻚⾯; </p></li><li><p>所以，我们将这个抽象过程称之为 ⽂档对象模型(Document Object Model)</p></li><li><p>Document节点表示的整个载⼊的⽹⻚，它的实例是全局的document对象:对DOM的所有操作都是从 document 对象开始的 </p></li><li><p>它是DOM的⼊⼝点，可以从document开始去访问任何节点元素;</p></li></ul>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> DOM和document对象的理解 </tag>
+            
+        </tags>
       
     </entry>
     
