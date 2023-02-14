@@ -4,6 +4,316 @@
   
     
     <entry>
+      <title>GO/AO/VO</title>
+      <link href="/2023/02/14/GO-AO-VO/"/>
+      <url>/2023/02/14/GO-AO-VO/</url>
+      
+        <content type="html"><![CDATA[<h1 id="对GO-x2F-AO-x2F-VO的理解"><a href="#对GO-x2F-AO-x2F-VO的理解" class="headerlink" title="对GO&#x2F;AO&#x2F;VO的理解"></a>对GO&#x2F;AO&#x2F;VO的理解</h1><h2 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h2><ul><li>Global Object JS代码在执⾏前会现在堆内存中创建⼀个全局对象(GO) </li><li>⽤于存放⼀些定义好的变量⽅法等包含Date Array String Number setTimeout等 </li><li>同时有⼀个window属性指向⾃⼰</li><li>同时在语法分析转成AST的过程中也会将⼀些变量 函数 存放在GO中 只是变量的初始值为 undefifined</li></ul><h2 id="AO"><a href="#AO" class="headerlink" title="AO"></a>AO</h2><ul><li>函数在执⾏前会先在堆内存中创建⼀个AO(Activation Object)对象 ⾥⾯存放这arguments 对应函数的形参 以及在函数中定义的变量 初始值为undefifined</li></ul><h2 id="VO"><a href="#VO" class="headerlink" title="VO"></a>VO</h2><ul><li>Variable Object 在执⾏函数时 会在执⾏上下⽂栈(ECS)中进⼊⼀个函数执⾏上下⽂(FEC)其中有三个核⼼ 核⼼之⼀是VO 指向的是该函数在内存中解析时创建的AO ⽽在全局执⾏上下⽂中指向的是GO</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> GO/AO/VO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>函数</title>
+      <link href="/2023/02/14/%E5%87%BD%E6%95%B0/"/>
+      <url>/2023/02/14/%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="函数-篇章"><a href="#函数-篇章" class="headerlink" title="函数 篇章"></a>函数 篇章</h1><h2 id="apply、call、bind函数的⽤法和区别？"><a href="#apply、call、bind函数的⽤法和区别？" class="headerlink" title="apply、call、bind函数的⽤法和区别？"></a>apply、call、bind函数的⽤法和区别？</h2><h4 id="⽤法："><a href="#⽤法：" class="headerlink" title="⽤法："></a>⽤法：</h4><ul><li><p>apply </p><p>第⼀个参数: 绑定this </p><p>第⼆个参数: 传⼊额外的实参, 以数组的形式</p></li><li><p>call </p><p>第⼀个参数: 绑定this </p><p>参数列表: 后续的参数以多参数的形式传递, 会作为实参 </p><p>bind(不希望obj对象身上有函数)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var bar = foo.bind(obj)</span><br><span class="line">bar() // this -&gt; obj</span><br></pre></td></tr></table></figure></li></ul><h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul><li>call、apply和bind都可以改变函数的this指向 </li><li>call、apply和bind第⼀个参数的是this要指向的对象 </li><li>call、apply和bind都可以后续为函数传参，apply是将参数并成⼀个数组，call和bind是将参数依次列出</li><li>call、apply都是直接调⽤，bind⽣成的this指向改变函数需要⼿动调⽤。</li></ul><h3 id="什么是纯函数？如何编写纯函数？"><a href="#什么是纯函数？如何编写纯函数？" class="headerlink" title="什么是纯函数？如何编写纯函数？"></a>什么是纯函数？如何编写纯函数？</h3><h4 id="纯函数：纯函数⼀般具有以下的特点："><a href="#纯函数：纯函数⼀般具有以下的特点：" class="headerlink" title="纯函数：纯函数⼀般具有以下的特点："></a>纯函数：纯函数⼀般具有以下的特点：</h4><ul><li><p>确定的输⼊⼀定会有确定的输出（外部环境的任何变化不会影响函数内部的操作产⽣的结果） </p></li><li><p>纯函数的执⾏不会产⽣副作⽤。（函数内部的操作也不会对函数外部产⽣任何影响） </p></li><li><p>纯函数在react和redux中应⽤⽐较多。 </p><ul><li><p>编写纯函数：</p></li><li><pre><code>//⼀般的数学⽅法可以写成纯函数,例如相加function sum(...args) &#123;var result = args.reduce((perValue, item) =&gt; &#123;return preValue + item &#125;, 0)return result&#125;</code></pre></li></ul></li></ul><h3 id="什么是函数柯⾥化？柯⾥化有什么作⽤？"><a href="#什么是函数柯⾥化？柯⾥化有什么作⽤？" class="headerlink" title="什么是函数柯⾥化？柯⾥化有什么作⽤？"></a>什么是函数柯⾥化？柯⾥化有什么作⽤？</h3><h4 id="函数的柯⾥化："><a href="#函数的柯⾥化：" class="headerlink" title="函数的柯⾥化："></a>函数的柯⾥化：</h4><ul><li>将传⼊多个参数的函数转变成传⼊单个参数并且返回⼀个函数⽤于接收剩余的参数的函数 </li><li>每⼀层函数都接收⼀个参数并对参数进⾏处理。</li></ul><h4 id="柯⾥化的作⽤："><a href="#柯⾥化的作⽤：" class="headerlink" title="柯⾥化的作⽤："></a>柯⾥化的作⽤：</h4><ul><li>单⼀职责：每⼀个函数只⽤处理传⼊的单个参数，每个函数的职责单⼀⽽且确定 </li><li>参数复⽤：可以拿到每⼀层函数执⾏的返回值作为⼀个新的函数，复⽤已经传⼊过的参数。</li></ul><h3 id="组合函数以及组合函数的作⽤？"><a href="#组合函数以及组合函数的作⽤？" class="headerlink" title="组合函数以及组合函数的作⽤？"></a>组合函数以及组合函数的作⽤？</h3><h4 id="组合函数"><a href="#组合函数" class="headerlink" title="组合函数"></a>组合函数</h4><ul><li>组合函数是将多个函数组合到⼀起，进⾏依次调⽤的函数使⽤模式。</li></ul><h4 id="组合函数的作⽤："><a href="#组合函数的作⽤：" class="headerlink" title="组合函数的作⽤："></a>组合函数的作⽤：</h4><ul><li>减少重复代码的编写，提⾼代码的复⽤性，便于开发。</li><li>可以对任意个函数进⾏组合，返回新的具有多个被组合函数功能的新函数</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数组</title>
+      <link href="/2023/02/14/%E6%95%B0%E7%BB%84/"/>
+      <url>/2023/02/14/%E6%95%B0%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="常⽤的数组操作⽅法有哪些？"><a href="#常⽤的数组操作⽅法有哪些？" class="headerlink" title="常⽤的数组操作⽅法有哪些？"></a>常⽤的数组操作⽅法有哪些？</h2><h3 id="Array-shift"><a href="#Array-shift" class="headerlink" title="Array.shift()"></a>Array.shift()</h3><ul><li>删除并返回第⼀个元素作⽤：从数组中删除第⼀个元素（即下标为0的元素），并返回该元素。 注意：1）删除元素之后，数组的⻓度-1。</li></ul><h3 id="Array-pop"><a href="#Array-pop" class="headerlink" title="Array.pop()"></a>Array.pop()</h3><ul><li>删除并返回最后⼀个元素 作⽤：从数组中删除最后⼀个元素（即下标为length-1的元素），并返回该元素。 注意：1）删除元素之后，数组的⻓度-1。</li></ul><h3 id="Array-push-param1-param2-…paramN"><a href="#Array-push-param1-param2-…paramN" class="headerlink" title="Array.push(param1[,param2,…paramN])"></a>Array.push(param1[,param2,…paramN])</h3><ul><li>尾部添加元素 作⽤：在数组的尾部添加⼀个元素，并返回新数组的⻓度。 注意：1）它是直接修改该数组，⽽不是重新创建⼀个数组。</li></ul><h3 id="Array-unshift-newElement1-newElement2-…newElementN"><a href="#Array-unshift-newElement1-newElement2-…newElementN" class="headerlink" title="Array.unshift(newElement1[,newElement2,…newElementN])"></a>Array.unshift(newElement1[,newElement2,…newElementN])</h3><ul><li>头部添加元素 作⽤：在数组的头部添加⼀个或多个元素，并返回新数组的⻓度。 注意：1）它是直接修改该数组，⽽不是重新创建⼀个数组</li></ul><h3 id="Array-join-separator"><a href="#Array-join-separator" class="headerlink" title="Array.join([separator])"></a>Array.join([separator])</h3><ul><li>转换成字符串 作⽤：把数组的所有元素放⼊到⼀个字符串中。 注意：1）参数separator表示字符串中元素的分隔符，可以为空，默认为半⻆逗号。</li></ul><h3 id="Array-reverse"><a href="#Array-reverse" class="headerlink" title="Array.reverse()"></a>Array.reverse()</h3><ul><li><p>反转数组 作⽤：把数组的所有元素顺序反转。 注意：1）该⽅法会直接修改数组，⽽不会创建新的 </p><p>数组</p></li></ul><h2 id="数组如何进⾏降维（扁平化）"><a href="#数组如何进⾏降维（扁平化）" class="headerlink" title="数组如何进⾏降维（扁平化）"></a>数组如何进⾏降维（扁平化）</h2><ul><li><p>利⽤Array.some⽅法判断数组中是否还存在数组，es6展开运算符连接数组 </p></li><li><pre><code>let arr = [1,2,[3,4]]while (arr.some(item =&gt; Array.isArray(item))) &#123;arr = [].concat(...arr);&#125;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 使⽤数组的concat⽅法 </span><br><span class="line"></span><br><span class="line">+ ```</span><br><span class="line">  let arr = [1,2,[3,4]]</span><br><span class="line">  let result = []</span><br><span class="line">  result = Array.prototype.concat.apply([], arr)</span><br></pre></td></tr></table></figure></code></pre></li><li><p>es6中的flat函数也可以实现数组的扁平化 </p></li><li><pre><code>let arr = [1,2,[&#39;a&#39;,&#39;b&#39;,[&#39;中&#39;,&#39;⽂&#39;,[1,2,3,[11,21,31]]]],3];let result = arr.flat( Infinity )<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 数组去重，能⽤⼏种⽅法实现？ </span><br><span class="line"></span><br><span class="line">+ 利⽤ES6 Set去重（ES6中最常⽤） </span><br><span class="line"></span><br><span class="line">+ ```</span><br><span class="line">  function unique (arr) &#123;</span><br><span class="line">  return Array.from(new Set(arr))</span><br><span class="line">  &#125;</span><br><span class="line">  var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined,</span><br><span class="line">  null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line">  console.log(unique(arr))</span><br><span class="line">  //[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;&#125;, &#123;&#125;]</span><br><span class="line">  ```</span><br><span class="line"></span><br><span class="line">+ 利⽤for嵌套for，然后splice去重（ES5中最常⽤） </span><br><span class="line"></span><br><span class="line">+ ````</span><br><span class="line">  function unique(arr)&#123; </span><br><span class="line">  for(var i=0; i&lt;arr.length; i++)&#123;</span><br><span class="line">  for(var j=i+1; j&lt;arr.length; j++)&#123;</span><br><span class="line">  if(arr[i]==arr[j])&#123; //第⼀个等同于第⼆个，splice⽅法删除第⼆个</span><br><span class="line">  arr.splice(j,1);</span><br><span class="line">  j--;</span><br><span class="line">   &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  return arr;</span><br><span class="line">  &#125;</span><br><span class="line">  var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined,</span><br><span class="line">  null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line">  console.log(unique(arr))</span><br><span class="line">  //[1, &quot;true&quot;, 15, false, undefined, NaN, NaN, &quot;NaN&quot;, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;] //NaN和&#123;&#125;没</span><br><span class="line">  有去重，两个null直接消失了</span><br></pre></td></tr></table></figure></code></pre></li><li><p>利⽤indexOf去重 </p></li><li><pre><code>function unique(arr) &#123;if (!Array.isArray(arr)) &#123;console.log(&#39;type error!&#39;)return &#125;var array = [];for (var i = 0; i &lt; arr.length; i++) &#123;if (array .indexOf(arr[i]) === -1) &#123;array .push(arr[i]) &#125; &#125;return array;&#125;var arr = [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined,null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];console.log(unique(arr))// [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;,&#123;…&#125;] //NaN、&#123;&#125;没有去重<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 利⽤sort去重 </span><br><span class="line"></span><br><span class="line">+ ````</span><br><span class="line">  function unique(arr) &#123;</span><br><span class="line">  if (!Array.isArray(arr)) &#123;</span><br><span class="line">  console.log(&#x27;type error!&#x27;)</span><br><span class="line">  return;</span><br><span class="line">   &#125;</span><br><span class="line">  arr = arr.sort()</span><br><span class="line">  var arrry= [arr[0]];</span><br><span class="line">  for (var i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">  if (arr[i] !== arr[i-1]) &#123;</span><br><span class="line">  arrry.push(arr[i]);</span><br><span class="line">   &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  return arrry;</span><br><span class="line">  &#125;</span><br><span class="line">  var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined,</span><br><span class="line">  null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line">  console.log(unique(arr))</span><br><span class="line">  // [0, 1, 15, &quot;NaN&quot;, NaN, NaN, &#123;…&#125;, &#123;…&#125;, &quot;a&quot;, false, null, true, &quot;true&quot;,</span><br><span class="line">  undefined] // NaN、&#123;&#125;没有去重</span><br></pre></td></tr></table></figure></code></pre></li><li><p>利⽤includes </p></li><li><pre><code>function unique(arr) &#123;if (!Array.isArray(arr)) &#123;console.log(&#39;type error!&#39;)return &#125;var array =[];for(var i = 0; i &lt; arr.length; i++) &#123;if( !array.includes( arr[i]) ) &#123;//includes 检测数组是否有某个值array.push(arr[i]); &#125; &#125;return array&#125;var arr = [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined,null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];console.log(unique(arr))//[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]// &#123;&#125; 没有去重<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 利⽤fifilter</span><br><span class="line"></span><br><span class="line">+ ```</span><br><span class="line">  function unique(arr) &#123;</span><br><span class="line">  return arr.filter(function(item, index, arr) &#123;</span><br><span class="line">  //当前元素，在原始数组中的第⼀个索引==当前索引值，否则返回当前元素</span><br><span class="line">  return arr.indexOf(item, 0) === index;</span><br><span class="line">   &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined,</span><br><span class="line">  null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line">  console.log(unique(arr))</span><br><span class="line">  //[1, &quot;true&quot;, true, 15, false, undefined, null, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]</span><br></pre></td></tr></table></figure></code></pre></li><li><p>利⽤递归去重 </p></li><li><pre><code>function unique(arr)&#123;return arr.reduce((prev,cur) =&gt; prev.includes(cur) ? prev : [...prev,cur],[]);&#125;var arr = [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined,null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];console.log(unique(arr));// [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]</code></pre></li></ul><h2 id="数组中的forEach和map的区别？"><a href="#数组中的forEach和map的区别？" class="headerlink" title="数组中的forEach和map的区别？"></a>数组中的forEach和map的区别？</h2><p>forEach() 和 map() 两个⽅法都是ECMA5中Array引进的新⽅法，都是⽤来遍历数组中的每⼀项。 </p><h4 id="它们之间的区别："><a href="#它们之间的区别：" class="headerlink" title="它们之间的区别："></a>它们之间的区别：</h4><ul><li>map速度⽐forEach快 </li><li>map会返回⼀个新数组，不对原数组产⽣影响,foreach不会产⽣新数组，forEach返回undefifined </li><li>map因为返回数组所以可以链式操作，forEach不能 </li><li>map⾥可以⽤return（return的是什么，相当于把数组中的这⼀项变为什么（并不影响原来的数 组，只是相当于把原数组克隆⼀份，把克隆的这⼀份的数组中的对应项改变了） 。 </li><li>forEach⾥⽤return不起作⽤，forEach不能⽤break，会直接报错。</li></ul><h2 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别?"></a>for in和for of的区别?</h2><p>在JavaScript中遍历数组通常是使⽤for…i循环，在ES5具有遍历数组功能的还有forEach、map、fifilter、 </p><p>some、every、reduce、reduceRight等。for…in和for…of是两种增强型循环，for…in是ES5标准，在 </p><p>ES6中新增了for…of的循环⽅式。</p><ul><li>for…in ：遍历以任意顺序迭代⼀个对象的除Symbol以外的可枚举属性，包括继承的可枚举属性 </li><li>for…of：遍历在可迭代对象，包括 Array ， Map ， Set ， String ， TypedArray ，arguments 对象等等</li><li>它们的区别 :<ul><li>for…in可以遍历对象和数组，for…of不能遍历对象 </li><li>for…in 循环不仅遍历对象的键名，还会遍历⼿动添加的其它键，甚⾄包括原型链上的键 </li><li>for…in遍历的索引为字符串类型</li><li>for..of适⽤遍历数&#x2F;数组对象&#x2F;字符串&#x2F;map&#x2F;set等拥有迭代器对象的集合，但是不能遍历对象 </li><li>for…of与forEach()不同的是，它可以正确响应break、continue和return语句具有迭代器对象才可以使⽤for…of</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> js基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组大全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>闭包</title>
+      <link href="/2023/02/14/%E9%97%AD%E5%8C%85/"/>
+      <url>/2023/02/14/%E9%97%AD%E5%8C%85/</url>
+      
+        <content type="html"><![CDATA[<h1 id="你是如何理解闭包的-闭包到底是什么"><a href="#你是如何理解闭包的-闭包到底是什么" class="headerlink" title="你是如何理解闭包的,闭包到底是什么?"></a>你是如何理解闭包的,闭包到底是什么?</h1><ul><li><p>什么是闭包？ </p><p>⼀个普通的函数function，如果它可以访问外层作⽤域的⾃由变量，那么这个函数和周围环境就是⼀个闭包。 </p><p>从狭义的⻆度来说：JavaScript中⼀个函数，如果访问了外层作⽤域的变量，那么它是⼀个闭包</p></li><li><p>应⽤场景 </p><p>防抖 、节流 、⽴即执⾏函数 、组合函数等等</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 闭包 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>作用域</title>
+      <link href="/2023/02/14/%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+      <url>/2023/02/14/%E4%BD%9C%E7%94%A8%E5%9F%9F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="作⽤域和作⽤域链的理解"><a href="#作⽤域和作⽤域链的理解" class="headerlink" title="作⽤域和作⽤域链的理解"></a>作⽤域和作⽤域链的理解</h1><h2 id="作⽤域"><a href="#作⽤域" class="headerlink" title="作⽤域"></a>作⽤域</h2><ul><li>在ES5中，全局是⼀个作⽤域，函数也会产⽣作⽤域。 </li><li>在ES6中，代码块、let、const等都会有属于⾃⼰的作⽤域。</li></ul><h2 id="作⽤域链"><a href="#作⽤域链" class="headerlink" title="作⽤域链"></a>作⽤域链</h2><ul><li>当进⼊到⼀个执⾏上下⽂时，执⾏上下⽂会关联⼀个作⽤域链。 </li><li>通常作⽤域链在解析时就被确定，作⽤域链与函数的定义位置有关，与它的调⽤位置⽆关</li></ul><h2 id="什么是变量提升、函数提升？"><a href="#什么是变量提升、函数提升？" class="headerlink" title="什么是变量提升、函数提升？"></a>什么是变量提升、函数提升？</h2><h3 id="变量提升："><a href="#变量提升：" class="headerlink" title="变量提升："></a>变量提升：</h3><ul><li><p>简单说就是在js代码执⾏前引擎会先进⾏预编译，预编译期间会将变量声明与函数声明提升⾄其对应作⽤域的最顶端，函数内声明的变量只会提升⾄该函数作⽤域最顶层。 </p></li><li><p>当函数内部定义的⼀个变量与外部相同时，那么函数体内的这个变量就会被上升到最顶端。</p></li><li><p>举个例⼦，如： </p><ul><li><pre><code>console.log(a); // undefinedvar a = 3; // 会将var a 的声明提升⾄最顶端</code></pre></li><li></li></ul></li></ul><h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3><ul><li>函数提升只会提升函数声明式写法，函数表达式的写法不存在函数提升。 </li><li>函数提升的优先级⼤于变量提升的优先级，即函数提升在变量提升之上。</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 作用域 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>this绑定</title>
+      <link href="/2023/02/14/this%E7%BB%91%E5%AE%9A/"/>
+      <url>/2023/02/14/this%E7%BB%91%E5%AE%9A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="this绑定"><a href="#this绑定" class="headerlink" title="this绑定"></a>this绑定</h1><h2 id="this的绑定规则有⼏种？"><a href="#this的绑定规则有⼏种？" class="headerlink" title="this的绑定规则有⼏种？"></a>this的绑定规则有⼏种？</h2><ul><li>默认绑定：独⽴函数调⽤，函数没有被绑定到某个对象上进⾏调⽤ </li><li>隐式绑定：通过某个对象发起的函数调⽤，在调⽤对象内部有⼀个对函数的引⽤。 </li><li>显式绑定：明确this指向的对象，第⼀个参数相同并要求传⼊⼀个对象。 <ul><li>apply&#x2F;call </li><li>bind</li></ul></li><li>new绑定： <ul><li>创建⼀个全新对象 </li><li>新对象被执⾏prototype链接 </li><li>新对象绑定到函数调⽤的this </li><li>如果函数没有返回其他对象，表达式会返回这个对象</li></ul></li></ul><h2 id="this的⾯试题解析"><a href="#this的⾯试题解析" class="headerlink" title="this的⾯试题解析"></a>this的⾯试题解析</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;window&quot;;</span><br><span class="line">function Person(name) &#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.foo1 = function () &#123;</span><br><span class="line">console.log(this.name);</span><br><span class="line"> &#125;;</span><br><span class="line">this.foo2 = () =&gt; console.log(this.name);</span><br><span class="line">this.foo3 = function () &#123;</span><br><span class="line">return function () &#123;</span><br><span class="line">console.log(this.name);</span><br><span class="line"> &#125;;</span><br><span class="line"> &#125;;</span><br><span class="line">this.foo4 = function () &#123;</span><br><span class="line">return () =&gt; &#123;</span><br><span class="line">console.log(this.name);</span><br><span class="line"> &#125;;</span><br><span class="line"> &#125;;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(&quot;person1&quot;);</span><br><span class="line">var person2 = new Person(&quot;person2&quot;);</span><br><span class="line">// person1.foo1() // person1 隐式调⽤</span><br><span class="line">// person1.foo1.call(person2) // person2 显示调⽤ this指向person2所在的对象</span><br><span class="line">// person1.foo2(); // person1 箭头函数 向上层作⽤查找 上层作⽤域中的this为person1指向</span><br><span class="line">的对象</span><br><span class="line">// person1.foo2.call(person2); // person1 箭头函数 显示绑定没⽤</span><br><span class="line">// person1.foo3()() // window 相当于将返回的函数赋值给⼀个变量 指向该变量 是独⽴函数调⽤</span><br><span class="line">// person1.foo3.call(person2)() // window 默认调⽤</span><br><span class="line">// person1.foo3().call(person2) // person2 将函数的this显示绑定到person2所在的对象</span><br><span class="line">// person1.foo4()() // person1 箭头函数 向上层作⽤域中查找this foo4中的this隐式绑定为</span><br><span class="line">person1</span><br><span class="line">// person1.foo4.call(person2)() // person2 箭头函数 向上层作⽤域中查找this foo4中</span><br><span class="line">的this显示绑定为person2</span><br><span class="line">// person1.foo4().call(person2) // person1 箭头函数显示绑定没⽤和person1.foo4()相同</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> this </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>a标签下载文件</title>
+      <link href="/2023/02/14/a%E6%A0%87%E7%AD%BE%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/"/>
+      <url>/2023/02/14/a%E6%A0%87%E7%AD%BE%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="点击-a-标签下载⽂件如何做？"><a href="#点击-a-标签下载⽂件如何做？" class="headerlink" title="点击 a 标签下载⽂件如何做？"></a>点击 a 标签下载⽂件如何做？</h1><h1 id="有两种⽅式"><a href="#有两种⽅式" class="headerlink" title="有两种⽅式:"></a>有两种⽅式:</h1><p>a.download 当指定 a 标签的 download 属性时，点击该链接会直接保存为⽂件，⽂件名为 </p><p>download 属性 </p><p>通过对 a 标签指定的 URL 在服务器设置响应头 Content-Disposition: attachment; </p><p>filename&#x3D;”filename.jpg” 可直接下载</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> a标签下载文件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Element与Node区别</title>
+      <link href="/2023/02/14/Element%E4%B8%8ENode%E5%8C%BA%E5%88%AB/"/>
+      <url>/2023/02/14/Element%E4%B8%8ENode%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="DOM-中-Element-与-Node-有何区别"><a href="#DOM-中-Element-与-Node-有何区别" class="headerlink" title="DOM 中 Element 与 Node 有何区别"></a>DOM 中 Element 与 Node 有何区别</h1><p>Element 继承于 Node，具有 Node 的⽅法，同时⼜拓展了很多⾃⼰的特有⽅法。 </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Element与Node区别 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>不可复制</title>
+      <link href="/2023/02/14/%E4%B8%8D%E5%8F%AF%E5%A4%8D%E5%88%B6/"/>
+      <url>/2023/02/14/%E4%B8%8D%E5%8F%AF%E5%A4%8D%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何实现⻚⾯⽂本不可复制"><a href="#如何实现⻚⾯⽂本不可复制" class="headerlink" title="如何实现⻚⾯⽂本不可复制"></a>如何实现⻚⾯⽂本不可复制</h1><p>有 CSS 和 JS 两种⽅法，以下任选其⼀或结合使⽤ </p><h3 id="使⽤-CSS-如下："><a href="#使⽤-CSS-如下：" class="headerlink" title="使⽤ CSS 如下："></a>使⽤ CSS 如下：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user-select: none;</span><br></pre></td></tr></table></figure><p>或使⽤ JS 如下，监听 selectstart 事件，禁⽌选中。 </p><p>当⽤户选中⼀⽚区域时，将触发 selectstart 事件，Selection API 将会选中⼀⽚区域。禁⽌选中区域 </p><p>即可实现⻚⾯⽂本不可复制。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">document.body.onselectstart = (e) =&gt; &#123;</span><br><span class="line">e.preventDefault();</span><br><span class="line">&#125;;</span><br><span class="line">document.body.oncopy = (e) =&gt; &#123;</span><br><span class="line">e.preventDefault();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 不可复制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>prefetch和preload应用场景</title>
+      <link href="/2023/02/14/prefetch%E5%92%8Cpreload%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+      <url>/2023/02/14/prefetch%E5%92%8Cpreload%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="preload和prefetch的应⽤场景？"><a href="#preload和prefetch的应⽤场景？" class="headerlink" title="preload和prefetch的应⽤场景？"></a>preload和prefetch的应⽤场景？</h1><h2 id="1-webpack优化之preload和prefetch："><a href="#1-webpack优化之preload和prefetch：" class="headerlink" title="1.webpack优化之preload和prefetch："></a>1.webpack优化之preload和prefetch：</h2><p>单⻚⾯应⽤由于⻚⾯过多，可能会导致代码体积过⼤，从⽽使得⾸⻚打开速度过慢。所以切分代码，优化⾸屏打开速度尤为重要。 </p><p>但是所有的技术⼿段都不是完美的。当我们切割代码后，⾸屏的js⽂件体积减少了好多。但是也有⼀个突出的问题： </p><p>那就是当跳转其他⻚⾯的时候，需要下载相应⻚⾯的js⽂件，这就导致体验极其不好，每⼀次点击访问 </p><p>新⻚⾯都要等待js⽂件下载，然后再去请求接⼝获取数据。频繁出现loading动画的体验真的不好 </p><p>所以如果我们在进⼊⾸⻚后，在浏览器的空闲时间提前下好⽤户可能会点击⻚⾯的js⽂件，这样⾸屏的js </p><p>⽂件⼤⼩得到了控制，⽽且再点击新⻚⾯的时候，相关的js⽂件已经下载好了，就不再会出现loading动画</p><h2 id="2-动态引⼊js⽂件，实现code-splitting，减少⾸屏打开时间"><a href="#2-动态引⼊js⽂件，实现code-splitting，减少⾸屏打开时间" class="headerlink" title="2.动态引⼊js⽂件，实现code-splitting，减少⾸屏打开时间"></a>2.动态引⼊js⽂件，实现code-splitting，减少⾸屏打开时间</h2><p>按引⼊情况加载，只需添加注释即可 </p><ul><li>代码分割注释：&#x2F;webpackChunkName: ‘mp-supports’&#x2F; </li><li>prefetch注释：&#x2F;* webpackPrefetch: true *&#x2F;</li></ul><p>更多的，可以查看 webpack 注释⿊魔法：<a href="https://webpack.js.org/api/module-methods/#magic-comments">https://webpack.js.org/api/module-methods/#magic-comments</a></p><p>以下便是使用案列:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const &#123; default: lodash &#125; = await import(/* webpackChunkName: &quot;lodash&quot; */ /*</span><br><span class="line">webpackPrefetch: true */ &#x27;lodash&#x27;);</span><br><span class="line">// Multiple possible targets</span><br><span class="line">import(</span><br><span class="line">/* webpackInclude: /\.json$/ */</span><br><span class="line">/* webpackExclude: /\.noimport\.json$/ */</span><br><span class="line">/* webpackChunkName: &quot;my-chunk-name&quot; */</span><br><span class="line">/* webpackMode: &quot;lazy&quot; */</span><br><span class="line">/* webpackPrefetch: true */</span><br><span class="line">/* webpackPreload: true */</span><br><span class="line">`./locale/$&#123;language&#125;`</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> prefetch和preload应用场景 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>prefetch和preload区别</title>
+      <link href="/2023/02/14/prefetch%E5%92%8Cpreload%E5%8C%BA%E5%88%AB/"/>
+      <url>/2023/02/14/prefetch%E5%92%8Cpreload%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="prefetch-与-preload-的区别是什么"><a href="#prefetch-与-preload-的区别是什么" class="headerlink" title="prefetch 与 preload 的区别是什么?"></a>prefetch 与 preload 的区别是什么?</h1><ul><li><p>先来看一段代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;style.css&quot; as=&quot;style&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;preload&quot; href=&quot;main.js&quot; as=&quot;script&quot; /&gt;</span><br></pre></td></tr></table></figure></li><li><p>preload 是⼀个声明式 fetch，可以强制浏览器在不阻塞 document 的 onload 事件的情况下请 </p><p>求资源。 preload 顾名思义就是⼀种预加载的⽅式，它通过声明向浏览器声明⼀个需要提前加载的资源，当资源真正被使⽤的时候⽴即执⾏，就⽆需等待⽹络的消耗 </p></li><li><p>prefetch 告诉浏览器这个资源将来可能需要，但是什么时间加载这个资源是由浏览器来决定的。 </p><p>若能预测到⽤户的⾏为，⽐如懒加载，点击到其它⻚⾯等则相当于提前预加载了需要的资源。</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> prefetch和preload区别 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/02/14/json%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+      <url>/2023/02/14/json%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="说说JSON的相关⽤法和应⽤场景？"><a href="#说说JSON的相关⽤法和应⽤场景？" class="headerlink" title="说说JSON的相关⽤法和应⽤场景？"></a>说说JSON的相关⽤法和应⽤场景？</h1><h3 id="三种⽤法"><a href="#三种⽤法" class="headerlink" title="三种⽤法"></a>三种⽤法</h3><p>简单值: 数字 字符串 布尔类型 </p><p>对象值 key value组成 必须添加双引号 value 可以是简单值 对象值 数组值 </p><p>数组值 内容可以是对象值 简单值 数组值</p><h3 id="应⽤场景"><a href="#应⽤场景" class="headerlink" title="应⽤场景"></a>应⽤场景</h3><p>⽹络传输的JSON数据 </p><p>项⽬的某些配置⽂件 </p><p>⾮关系型数据库将JSON作为存储⽂件</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> json应用场景 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>load和DOMcontentLoaded区别</title>
+      <link href="/2023/02/14/load%E5%92%8CDOMcontentLoaded%E5%8C%BA%E5%88%AB/"/>
+      <url>/2023/02/14/load%E5%92%8CDOMcontentLoaded%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<p>load </p><ul><li>浏览器加载完所有的HTML 还加载完所有的外部资源 样式 图⽚等</li></ul><p>DOMContentLoaded </p><ul><li>HTML⽂档所有资源都加载完成 并构建了DOM树 但是⼀些外部资源还没有加载完成 如图⽚的src</li></ul><h3 id="事件委托的理解"><a href="#事件委托的理解" class="headerlink" title="事件委托的理解?"></a>事件委托的理解?</h3><p>利⽤事件的冒泡机制，以及事件对象中可以准确获知触发事件的元素机制(e.target)，将⼦元素事件委托 </p><p>给⽗元素处理的现象</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> load和DOMcontentLoaded区别 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>事件委托</title>
+      <link href="/2023/02/14/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"/>
+      <url>/2023/02/14/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</url>
+      
+        <content type="html"><![CDATA[<p>利⽤事件的冒泡机制，以及事件对象中可以准确获知触发事件的元素机制(e.target)，将⼦元素事件委托 </p><p>给⽗元素处理的现象。 </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 事件委托 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>冒泡事件</title>
+      <link href="/2023/02/14/%E5%86%92%E6%B3%A1%E4%BA%8B%E4%BB%B6/"/>
+      <url>/2023/02/14/%E5%86%92%E6%B3%A1%E4%BA%8B%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="冒泡和事件捕获的理解"><a href="#冒泡和事件捕获的理解" class="headerlink" title="冒泡和事件捕获的理解"></a>冒泡和事件捕获的理解</h1><p>事件冒泡: </p><ul><li>从最内层的元素向外依次传递的顺序, 默认是事件冒泡</li></ul><p>事件捕获: </p><ul><li>从外层到内层依次传递的顺序 ,可以通过addEventListener(“click”,fn,true) 监听事件捕获</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 冒泡事件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>attributy和Property</title>
+      <link href="/2023/02/14/attributy%E5%92%8CProperty/"/>
+      <url>/2023/02/14/attributy%E5%92%8CProperty/</url>
+      
+        <content type="html"><![CDATA[<h1 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h1><ul><li>浏览器解析HTML元素时 会将对应的属性(attribute)放在对应的元素对象上 </li><li>具体分为标准的属性和⾮标准的属性 <ul><li>标准属性: id class href type value等等 </li><li>⾮标准属性(⾃定义) :abc age height</li></ul></li></ul><h1 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h1><ul><li>对于标准的attribute 会在DOM对象上创建对应的property属性 </li><li>⼤多数情况下 他们是相互作⽤的 改变其中⼀个 另⼀个也会随之改变 </li><li>⼤多数情况 推荐获取attribute 使⽤property⽅式 因为它默认是有类型的</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> attributy和Property </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>逻辑与&amp;&amp;和逻辑或||的本质和区别？</title>
       <link href="/2023/02/14/%E9%80%BB%E8%BE%91%E4%B8%8E&amp;&amp;%E5%92%8C%E9%80%BB%E8%BE%91%E6%88%96%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
       <url>/2023/02/14/%E9%80%BB%E8%BE%91%E4%B8%8E&amp;&amp;%E5%92%8C%E9%80%BB%E8%BE%91%E6%88%96%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
@@ -40,25 +350,6 @@
         <tags>
             
             <tag> js基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>i++和++i</title>
-      <link href="/2023/02/14/i++%E5%92%8C++i/"/>
-      <url>/2023/02/14/i++%E5%92%8C++i/</url>
-      
-        <content type="html"><![CDATA[<h1 id="count-和-count的区别"><a href="#count-和-count的区别" class="headerlink" title="count++和++count的区别?"></a>count++和++count的区别?</h1><ul><li>如果它们在计算之后的值不会被使⽤ 是没有区别的 </li><li>如果需要⽴刻使⽤⾃增之后的值 就⽤前置型 反之后置型</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var num = 1 + ++count // 不推荐这么写</span><br><span class="line">//需要⽴刻使⽤的话</span><br><span class="line">count++</span><br><span class="line">var num = 1 +count //++count</span><br><span class="line">//不需要的话</span><br><span class="line">var num = 1 + count //count++</span><br><span class="line">count++</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 自加 </tag>
             
         </tags>
       
