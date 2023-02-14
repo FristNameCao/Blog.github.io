@@ -4,6 +4,145 @@
   
     
     <entry>
+      <title>逻辑与&amp;&amp;和逻辑或||的本质和区别？</title>
+      <link href="/2023/02/14/%E9%80%BB%E8%BE%91%E4%B8%8E&amp;&amp;%E5%92%8C%E9%80%BB%E8%BE%91%E6%88%96%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
+      <url>/2023/02/14/%E9%80%BB%E8%BE%91%E4%B8%8E&amp;&amp;%E5%92%8C%E9%80%BB%E8%BE%91%E6%88%96%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="逻辑与-也叫作短路与"><a href="#逻辑与-也叫作短路与" class="headerlink" title="逻辑与:也叫作短路与"></a>逻辑与:也叫作短路与</h1><ul><li>从左往右,依次计算 </li><li>当计算第⼀个运算元,先隐式转换为Boolean值进⾏⽐较 </li><li>true ,继续下⼀个⽐较 </li><li>false ,直接返回该运算元的初始值 </li><li>如果找到最后也没有找到,就返回最后⼀个运算元</li></ul><h1 id="逻辑或-也叫做短路或"><a href="#逻辑或-也叫做短路或" class="headerlink" title="逻辑或:也叫做短路或"></a>逻辑或:也叫做短路或</h1><p>从左往右,依次计算 </p><p>当计算第⼀个运算元,先隐式转换为Boolean值进⾏⽐较 </p><p>true ,直接返回该运算元的初始值 </p><p>false ,继续下⼀个⽐较 </p><p>如果找到最后也没有找到,就返回最后⼀个运算元</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>==和===</title>
+      <link href="/2023/02/14/==%E5%92%8C===/"/>
+      <url>/2023/02/14/==%E5%92%8C===/</url>
+      
+        <content type="html"><![CDATA[<h1 id="x3D-x3D-普通相等"><a href="#x3D-x3D-普通相等" class="headerlink" title="&#x3D;&#x3D; (普通相等)"></a>&#x3D;&#x3D; (普通相等)</h1><p>在类型不相同的情况下, 会将运算元先转成Number的值, 再进⾏⽐较(隐式转换) </p><p>null⽐较特殊: null在进⾏⽐较的时候, 应该是会被当成⼀个对象和原⽣类型进⾏⽐较的 </p><h1 id="x3D-x3D-x3D-严格不等"><a href="#x3D-x3D-x3D-严格不等" class="headerlink" title="&#x3D;&#x3D;&#x3D; (严格不等)"></a>&#x3D;&#x3D;&#x3D; (严格不等)</h1><p>在类型不同的情况下,直接返回false</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> js基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>i++和++i</title>
+      <link href="/2023/02/14/i++%E5%92%8C++i/"/>
+      <url>/2023/02/14/i++%E5%92%8C++i/</url>
+      
+        <content type="html"><![CDATA[<h1 id="count-和-count的区别"><a href="#count-和-count的区别" class="headerlink" title="count++和++count的区别?"></a>count++和++count的区别?</h1><ul><li>如果它们在计算之后的值不会被使⽤ 是没有区别的 </li><li>如果需要⽴刻使⽤⾃增之后的值 就⽤前置型 反之后置型</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var num = 1 + ++count // 不推荐这么写</span><br><span class="line">//需要⽴刻使⽤的话</span><br><span class="line">count++</span><br><span class="line">var num = 1 +count //++count</span><br><span class="line">//不需要的话</span><br><span class="line">var num = 1 + count //count++</span><br><span class="line">count++</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 自加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js数据类型</title>
+      <link href="/2023/02/14/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2023/02/14/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript-中的常⻅数据类型"><a href="#JavaScript-中的常⻅数据类型" class="headerlink" title="JavaScript 中的常⻅数据类型"></a>JavaScript 中的常⻅数据类型</h1><h3 id="Number-gt-代表数据类型是数值"><a href="#Number-gt-代表数据类型是数值" class="headerlink" title="Number -&gt; 代表数据类型是数值"></a>Number -&gt; 代表数据类型是数值</h3><ul><li><p>整数 </p></li><li><p>浮点</p></li><li><p>数组</p></li></ul><h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><ul><li>String -&gt; 代表字符串类型 -&gt; 通常是⼀段⽂本</li></ul><h3 id="boolean-gt-布尔类型"><a href="#boolean-gt-布尔类型" class="headerlink" title="boolean -&gt; 布尔类型"></a>boolean -&gt; 布尔类型</h3><ul><li>true </li><li>false</li></ul><p>NULL -&gt; 空值 </p><p>undefifined -&gt; 变量未定义 </p><p>Object -&gt; 对象类型 </p><p>BigInt -&gt; ⼤整数类型 </p><p>Symbol -&gt; 符号类型</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> js数据类型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js数据类型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>563514</title>
+      <link href="/2023/02/14/563514/"/>
+      <url>/2023/02/14/563514/</url>
+      
+        <content type="html"><![CDATA[<p>163416</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回调和匿名</title>
+      <link href="/2023/02/14/%E5%9B%9E%E8%B0%83%E5%92%8C%E5%8C%BF%E5%90%8D/"/>
+      <url>/2023/02/14/%E5%9B%9E%E8%B0%83%E5%92%8C%E5%8C%BF%E5%90%8D/</url>
+      
+        <content type="html"><![CDATA[<h1 id="回调函数："><a href="#回调函数：" class="headerlink" title="回调函数："></a>回调函数：</h1><h4 id="⼀个函数作为另外⼀个函数的参数，称之为回调函数，也称为⾼阶函数"><a href="#⼀个函数作为另外⼀个函数的参数，称之为回调函数，也称为⾼阶函数" class="headerlink" title="⼀个函数作为另外⼀个函数的参数，称之为回调函数，也称为⾼阶函数"></a>⼀个函数作为另外⼀个函数的参数，称之为回调函数，也称为⾼阶函数</h4><h1 id="匿名函数："><a href="#匿名函数：" class="headerlink" title="匿名函数："></a>匿名函数：</h1><h4 id="如果在传⼊⼀个函数时，我们没有指定这个函数的名词或者通过函数表达式指定函数对应的变量，"><a href="#如果在传⼊⼀个函数时，我们没有指定这个函数的名词或者通过函数表达式指定函数对应的变量，" class="headerlink" title="如果在传⼊⼀个函数时，我们没有指定这个函数的名词或者通过函数表达式指定函数对应的变量，"></a>如果在传⼊⼀个函数时，我们没有指定这个函数的名词或者通过函数表达式指定函数对应的变量，</h4><h4 id="那么这个函数称之为匿名函数"><a href="#那么这个函数称之为匿名函数" class="headerlink" title="那么这个函数称之为匿名函数"></a>那么这个函数称之为匿名函数</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> js基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 回调和匿名 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>javascript</title>
+      <link href="/2023/02/14/javascript/"/>
+      <url>/2023/02/14/javascript/</url>
+      
+        <content type="html"><![CDATA[<p>shenm13143651453614536</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Object_CSD</title>
       <link href="/2023/02/12/Object-CSD/"/>
       <url>/2023/02/12/Object-CSD/</url>
