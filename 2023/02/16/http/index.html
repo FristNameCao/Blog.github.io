@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>http和https | CC_Blog</title><meta name="author" content="CC"><meta name="copyright" content="CC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="HTTP 和 HTTPShttp 和 https 的基本概念http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。  https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性。 http 和 https 的区别及优缺点？ http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http和https">
+<meta property="og:url" content="https://fristnamecao.github.io/2023/02/16/http/index.html">
+<meta property="og:site_name" content="CC_Blog">
+<meta property="og:description" content="HTTP 和 HTTPShttp 和 https 的基本概念http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。  https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性。 http 和 https 的区别及优缺点？ http">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2023/02/13/pSo3FKA.jpg">
+<meta property="article:published_time" content="2023-02-16T05:01:35.000Z">
+<meta property="article:modified_time" content="2023-02-16T06:31:33.488Z">
+<meta property="article:author" content="CC">
+<meta property="article:tag" content="http和https">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/02/13/pSo3FKA.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fristnamecao.github.io/2023/02/16/http/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: CC","link":"链接: ","source":"来源: CC_Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'http和https',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-02-16 14:31:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s1.ax1x.com/2023/02/13/pSo3FKA.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类:</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HTML/"><i class="fa-fw fas fa-bars"></i><span> HTML</span></a></li><li><a class="site-page child" href="/CSS_/"><i class="fa-fw fas fa-code"></i><span> CSS</span></a></li><li><a class="site-page child" href="/JavaScript/"><i class="fa-fw hidden"></i><span> JavaScript</span></a></li><li><a class="site-page child" href="/TypeScript/"><i class="fa-fw hidden"></i><span> TypeScript</span></a></li><li><a class="site-page child" href="/Vue/"><i class="fa-fw hidden"></i><span> Vue3</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 技术分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: orange"><nav id="nav"><span id="blog-info"><a href="/" title="CC_Blog"><span class="site-name">CC_Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类:</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HTML/"><i class="fa-fw fas fa-bars"></i><span> HTML</span></a></li><li><a class="site-page child" href="/CSS_/"><i class="fa-fw fas fa-code"></i><span> CSS</span></a></li><li><a class="site-page child" href="/JavaScript/"><i class="fa-fw hidden"></i><span> JavaScript</span></a></li><li><a class="site-page child" href="/TypeScript/"><i class="fa-fw hidden"></i><span> TypeScript</span></a></li><li><a class="site-page child" href="/Vue/"><i class="fa-fw hidden"></i><span> Vue3</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 技术分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">http和https</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-16T05:01:35.000Z" title="发表于 2023-02-16 13:01:35">2023-02-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-16T06:31:33.488Z" title="更新于 2023-02-16 14:31:33">2023-02-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/js%E7%BD%91%E7%BB%9C/">js网络</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="http和https"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HTTP-和-HTTPS"><a href="#HTTP-和-HTTPS" class="headerlink" title="HTTP 和 HTTPS"></a>HTTP 和 HTTPS</h1><h2 id="http-和-https-的基本概念"><a href="#http-和-https-的基本概念" class="headerlink" title="http 和 https 的基本概念"></a>http 和 https 的基本概念</h2><p>http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。</p>
+<p> https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性。</p>
+<h2 id="http-和-https-的区别及优缺点？"><a href="#http-和-https-的区别及优缺点？" class="headerlink" title="http 和 https 的区别及优缺点？"></a>http 和 https 的区别及优缺点？</h2><ul>
+<li>http 是超文本传输协议，信息是明文传输，HTTPS 协议要比 http 协议<code>安全</code>，https 是具有安全性的 ssl 加密传输协议，可防止数据在传输过程中被窃取、改变，确保数据的完整性(当然这种安全性并非绝对的，对于更深入的 Web 安全问题，此处暂且不表)。</li>
+<li>http 协议的<code>默认端口</code>为 80，https 的默认端口为 443。</li>
+<li>http 的连接很简单，是无状态的。https 握手阶段比较<code>费时</code>，会使页面加载时间延长 50%，增加 10%~20%的耗电。</li>
+<li>https <code>缓存</code>不如 http 高效，会增加数据开销。</li>
+<li>Https 协议需要 ca 证书，费用较高，功能越强大的<code>证书费</code>用越高。</li>
+<li>SSL 证书需要绑定 <code>IP</code>，不能再同一个 IP 上绑定多个域名，IPV4 资源支持不了这种消耗。</li>
+</ul>
+<h2 id="https-协议的工作原理"><a href="#https-协议的工作原理" class="headerlink" title="https 协议的工作原理"></a>https 协议的工作原理</h2><p>客户端在使用 HTTPS 方式与 Web 服务器通信时有以下几个步骤：</p>
+<ol>
+<li>客户端使用 https url 访问服务器，则要求 web 服务器<code>建立 ssl 链接</code>。</li>
+<li>web 服务器接收到客户端的请求之后，会<code>将网站的证书（证书中包含了公钥），传输给客户端</code>。</li>
+<li>客户端和 web 服务器端开始<code>协商 SSL 链接的安全等级</code>，也就是加密等级。</li>
+<li>客户端浏览器通过双方协商一致的安全等级，<code>建立会话密钥</code>，然后通过网站的公钥来加密会话密钥，并传送给网站。</li>
+<li>web 服务器<code>通过自己的私钥解密出会话密钥</code>。</li>
+<li>web 服务器<code>通过会话密钥加密与客户端之间的通信</code>。</li>
+</ol>
+<h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><p>第一次握手：<code>建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认</code>；SYN：同步序列编号（Synchronize Sequence Numbers）。</p>
+<p>第二次握手：<code>服务器收到syn包并确认客户的SYN</code>（ack&#x3D;j+1），<code>同时也发送一个自己的SYN包</code>（syn&#x3D;k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
+<p>第三次握手：<code>客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1）</code>，此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。</p>
+<h2 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a>TCP 四次挥手</h2><ol>
+<li><code>客户端进程发出连接释放报文</code>，并且停止发送数据。释放数据报文首部，FIN&#x3D;1，其序列号为seq&#x3D;u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，<code>客户端进入FIN-WAIT-1（终止等待1）状态</code>。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。</li>
+<li><code>服务器收到连接释放报文，发出确认报文</code>，ACK&#x3D;1，ack&#x3D;u+1，并且带上自己的序列号seq&#x3D;v，此时，<code>服务端就进入了CLOSE-WAIT（关闭等待）状态</code>。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。</li>
+<li>客户端收到服务器的确认请求后，此时，<code>客户端就进入FIN-WAIT-2（终止等待2）状态</code>，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最 后的数据）。</li>
+<li><code>服务器将最后的数据发送完毕后，就向客户端发送连接释放报文</code>，FIN&#x3D;1，ack&#x3D;u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq&#x3D;w，此时，<code>服务器就进入了LAST-ACK（最后确认）状态</code>，等待客户端的确认。</li>
+<li><code>客户端收到服务器的连接释放报文后，必须发出确认</code>，ACK&#x3D;1，ack&#x3D;w+1，而自己的序列号是seq&#x3D;u+1，此时，<code>客户端就进入了TIME-WAIT（时间等待）状态</code>。注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，<code>当客户端撤销相应的TCB后，才进入CLOSED状态</code>。</li>
+<li>服务器只要收到了客户端发出的确认，<code>立即进入CLOSED状态</code>。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，<code>服务器结束TCP连接的时间要比客户端早一些</code>。</li>
+</ol>
+<h2 id="TCP-x2F-IP-x2F-如何保证数据包传输的有序可靠"><a href="#TCP-x2F-IP-x2F-如何保证数据包传输的有序可靠" class="headerlink" title="TCP&#x2F;IP &#x2F; 如何保证数据包传输的有序可靠"></a>TCP&#x2F;IP &#x2F; 如何保证数据包传输的有序可靠</h2><p>对字节流分段并进行编号然后<code>通过 ACK 回复</code>和<code>超时重发</code>这两个机制来保证。</p>
+<ol>
+<li>为了保证数据包的可靠传递，发送方必须把已发送的数据包保留在缓冲区；</li>
+<li>并为每个已发送的数据包启动一个超时定时器；</li>
+<li>如在定时器超时之前收到了对方发来的应答信息（可能是对本包的应答，也可以是对本包后续包的应答），则释放该数据包占用的缓冲区;</li>
+<li>否则，重传该数据包，直到收到应答或重传次数超过规定的最大次数为止。</li>
+<li>接收方收到数据包后，先进行CRC校验，如果正确则把数据交给上层协议，然后给发送方发送一个累计应答包，表明该数据已收到，如果接收方正好也有数据要发给发送方，应答包也可方在数据包中捎带过去。</li>
+</ol>
+<h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><ol>
+<li>TCP是面向<code>链接</code>的，而UDP是面向无连接的。</li>
+<li>TCP仅支持<code>单播传输</code>，UDP 提供了单播，多播，广播的功能。</li>
+<li>TCP的三次握手保证了连接的<code>可靠性</code>; UDP是无连接的、不可靠的一种数据传输协议，首先不可靠性体现在无连接上，通信都不需要建立连接，对接收到的数据也不发送确认信号，发送端不知道数据是否会正确接收。</li>
+<li>UDP的<code>头部开销</code>比TCP的更小，数据<code>传输速率更高</code>，<code>实时性更好</code>。</li>
+</ol>
+<h2 id="HTTP-请求跨域问题"><a href="#HTTP-请求跨域问题" class="headerlink" title="HTTP 请求跨域问题"></a>HTTP 请求跨域问题</h2><ol>
+<li><p>跨域的原理</p>
+<p><strong>跨域</strong>，是指浏览器不能执行其他网站的脚本。它是由浏览器的<code>同源策略</code>造成的。<br> <strong>同源策略</strong>,是浏览器对 JavaScript 实施的安全限制，只要<code>协议、域名、端口</code>有任何一个不同，都被当作是不同的域。<br> <strong>跨域原理</strong>，即是通过各种方式，<code>避开浏览器的安全限制</code>。</p>
+</li>
+<li><p>解决方案</p>
+<p>最初做项目的时候，使用的是jsonp，但存在一些问题，使用get请求不安全，携带数据较小，后来也用过iframe，但只有主域相同才行，也是存在些问题，后来通过了解和学习发现使用代理和proxy代理配合起来使用比较方便，就引导后台按这种方式做下服务器配置，在开发中使用proxy，在服务器上使用nginx代理，这样开发过程中彼此都方便，效率也高；现在h5新特性还有 windows.postMessage()</p>
+<ul>
+<li><p><strong>JSONP</strong>：<br> ajax 请求受同源策略影响，不允许进行跨域请求，而 script 标签 src 属性中的链 接却可以访问跨域的 js 脚本，利用这个特性，服务端不再返回 JSON 格式的数据，而是 返回一段调用某个函数的 js 代码，在 src 中进行了调用，这样实现了跨域。</p>
+<p>步骤：</p>
+<ol>
+<li>去创建一个script标签</li>
+<li>script的src属性设置接口地址</li>
+<li>接口参数，必须要带一个自定义函数名，要不然后台无法返回数据</li>
+<li>通过定义函数名去接受返回的数据</li>
+</ol>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//动态创建 script</span><br><span class="line">var script = document.createElement(&#x27;script&#x27;);</span><br><span class="line"></span><br><span class="line">// 设置回调函数</span><br><span class="line">function getData(data) &#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//设置 script 的 src 属性，并设置请求地址</span><br><span class="line">script.src = &#x27;http://localhost:3000/?callback=getData&#x27;;</span><br><span class="line"></span><br><span class="line">// 让 script 生效</span><br><span class="line">document.body.appendChild(script);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>JSONP 的缺点</strong>:<br> JSON 只支持 get，因为 script 标签只能使用 get 请求； JSONP 需要后端配合返回指定格式的数据。</p>
+<p><strong>document.domain</strong> 基础域名相同 子域名不同</p>
+<p><strong>window.name</strong> 利用在一个浏览器窗口内，载入所有的域名都是共享一个window.name</p>
+<p><strong>CORS</strong> CORS(Cross-origin resource sharing)跨域资源共享 服务器设置对CORS的支持原理：服务器设置Access-Control-Allow-Origin HTTP响应头之后，浏览器将会允许跨域请求</p>
+<p><strong>proxy代理</strong> 目前常用方式,通过服务器设置代理</p>
+<p><strong>window.postMessage()</strong> 利用h5新特性window.postMessage()</p>
+</li>
+</ul>
+<h2 id="粘包问题分析与对策"><a href="#粘包问题分析与对策" class="headerlink" title="粘包问题分析与对策"></a>粘包问题分析与对策</h2></li>
+</ul>
+</li>
+</ol>
+<p>TCP粘包是指发送方发送的若干包数据到接收方接收时粘成一包，从接收缓冲区看，后一包数据的头紧接着前一包数据的尾。 </p>
+<h4 id="粘包出现原因"><a href="#粘包出现原因" class="headerlink" title="粘包出现原因"></a><strong>粘包出现原因</strong></h4><p>简单得说，在流传输中出现，UDP不会出现粘包，因为它有<strong>消息边界</strong></p>
+<p>粘包情况有两种，一种是<code>粘在一起的包都是完整的数据包</code>，另一种情况是<code>粘在一起的包有不完整的包</code>。</p>
+<p>为了<strong>避免粘包</strong>现象，可采取以下几种措施：</p>
+<ol>
+<li><p>对于发送方引起的粘包现象，用户可通过编程设置来避免，<code>TCP提供了强制数据立即传送的操作指令push</code>，TCP软件收到该操作指令后，就立即将本段数据发送出去，而不必等待发送缓冲区满；</p>
+</li>
+<li><p>对于接收方引起的粘包，则可通过优化程序设计、精简接收进程工作量、<code>提高接收进程优先级等措施</code>，使其及时接收数据，从而尽量避免出现粘包现象；</p>
+</li>
+<li><p>由接收方控制，将一包数据按结构字段，人为控制分多次接收，然后合并，通过这种手段来避免粘包。<code>分包多发</code>。</p>
+<ul>
+<li>以上提到的三种措施，都有其不足之处。</li>
+<li>第一种编程设置方法虽然可以避免发送方引起的粘包，但它关闭了优化算法，降低了网络发送效率，影响应用程序的性能，一般不建议使用。</li>
+<li>第二种方法只能减少出现粘包的可能性，但并不能完全避免粘包，当发送频率较高时，或由于网络突发可能使某个时间段数据包到达接收方较快，接收方还是有可能来不及接收，从而导致粘包。</li>
+<li>第三种方法虽然避免了粘包，但应用程序的效率较低，对实时应用的场合不适合。</li>
+</ul>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://fristnamecao.github.io">CC</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://fristnamecao.github.io/2023/02/16/http/">https://fristnamecao.github.io/2023/02/16/http/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://www.ccblog.cloud/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fristnamecao.github.io" target="_blank">CC_Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/http%E5%92%8Chttps/">http和https</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2023/02/13/pSo3FKA.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s1.ax1x.com/2023/02/13/pSo3BrR.png" target="_blank"><img class="post-qr-code-img" src="https://s1.ax1x.com/2023/02/13/pSo3BrR.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://s1.ax1x.com/2023/02/13/pSo30M9.jpg" target="_blank"><img class="post-qr-code-img" src="https://s1.ax1x.com/2023/02/13/pSo30M9.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/15/%E6%9C%AC%E5%91%BD%E5%B9%B4%E7%94%9F%E6%97%A5/" title="本命年生日"><img class="cover" src="https://s1.ax1x.com/2023/02/15/pSTbEtJ.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">本命年生日</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/16/Cookie%E5%92%8ClocalStorage/" title="Cookie和localStorage"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cookie和localStorage</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s1.ax1x.com/2023/02/13/pSo3FKA.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CC</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://www.ccblog.cloud/"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FristNameCao" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:929877449@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">谢谢你能来到这里,目前已经新上线本地搜索和评论功能，好文章后续会持续推送<center>瞬移：<br><a target="_blank" rel="noopener" href="https://www.ccblog.cloud/">CC</a> <br><a target="_blank" rel="noopener" href="https://www.ccblog.cloud/HTML">HTML</a> <br><a target="_blank" rel="noopener" href="https://www.ccblog.cloud/CSS_">CSS</a> <br><a target="_blank" rel="noopener" href="https://www.ccblog.cloud/JavaScript">JavaScript</a> <br><a target="_blank" rel="noopener" href="https://www.ccblog.cloud/TypeScript">TypeScript</a> <br><a target="_blank" rel="noopener" href="https://www.ccblog.cloud/Vue">Vue3</a> </center></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP-%E5%92%8C-HTTPS"><span class="toc-number">1.</span> <span class="toc-text">HTTP 和 HTTPS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E5%92%8C-https-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">http 和 https 的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E5%92%8C-https-%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">http 和 https 的区别及优缺点？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#https-%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">https 协议的工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-number">1.4.</span> <span class="toc-text">TCP三次握手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">1.5.</span> <span class="toc-text">TCP 四次挥手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-x2F-IP-x2F-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%95%B0%E6%8D%AE%E5%8C%85%E4%BC%A0%E8%BE%93%E7%9A%84%E6%9C%89%E5%BA%8F%E5%8F%AF%E9%9D%A0"><span class="toc-number">1.6.</span> <span class="toc-text">TCP&#x2F;IP &#x2F; 如何保证数据包传输的有序可靠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.7.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-%E8%AF%B7%E6%B1%82%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-number">1.8.</span> <span class="toc-text">HTTP 请求跨域问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E5%AF%B9%E7%AD%96"><span class="toc-number">1.9.</span> <span class="toc-text">粘包问题分析与对策</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%98%E5%8C%85%E5%87%BA%E7%8E%B0%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.9.0.1.</span> <span class="toc-text">粘包出现原因</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/16/watch%E5%92%8Ccomputed/" title="vue2基础">vue2基础</a><time datetime="2023-02-16T07:54:18.000Z" title="发表于 2023-02-16 15:54:18">2023-02-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/16/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/" title="vue生命周期的理解"><img src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue生命周期的理解"/></a><div class="content"><a class="title" href="/2023/02/16/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/" title="vue生命周期的理解">vue生命周期的理解</a><time datetime="2023-02-16T07:51:08.000Z" title="发表于 2023-02-16 15:51:08">2023-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/16/vue%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" title="vue底层实现原理">vue底层实现原理</a><time datetime="2023-02-16T07:46:59.000Z" title="发表于 2023-02-16 15:46:59">2023-02-16</time></div></div></div></div></div></div></main><footer id="footer" style="background: orange"><div id="footer-wrap"><div class="copyright">&copy;2023 By CC</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署,联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="www.ccblog.cloud"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.ccblog.cloud/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="b,l,o,g" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

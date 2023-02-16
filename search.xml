@@ -4,6 +4,131 @@
   
     
     <entry>
+      <title>vue2基础</title>
+      <link href="/2023/02/16/watch%E5%92%8Ccomputed/"/>
+      <url>/2023/02/16/watch%E5%92%8Ccomputed/</url>
+      
+        <content type="html"><![CDATA[<h2 id="computed与watch"><a href="#computed与watch" class="headerlink" title="computed与watch"></a>computed与watch</h2><p>​通俗来讲，既能用 computed 实现又可以用 watch 监听来实现的功能，推荐用 computed， 重点在于 computed 的缓存功能 computed 计算属性是用来声明式的描述一个值依赖了其它的值，当所依赖的值或者变量 改变时，计算属性也会跟着改变； watch 监听的是已经在 data 中定义的变量，当该变量变化时，会触发 watch 中的方法。</p><p><strong>watch 属性监听</strong> 是一个对象，键是需要观察的属性，值是对应回调函数，主要用来监听某些特定数据的变化，从而进行某些具体的业务逻辑操作,监听属性的变化，需要在数据变化时执行异步或开销较大的操作时使用</p><p><strong>computed 计算属性</strong> 属性的结果会被<code>缓存</code>，当<code>computed</code>中的函数所依赖的属性没有发生改变的时候，那么调用当前函数的时候结果会从缓存中读取。除非依赖的响应式属性变化时才会重新计算，主要当做属性来使用 <code>computed</code>中的函数必须用<code>return</code>返回最终的结果 <code>computed</code>更高效，优先使用。<code>data 不改变，computed 不更新。</code></p><p><strong>使用场景</strong> <code>computed</code>：当一个属性受多个属性影响的时候使用，例：购物车商品结算功能 <code>watch</code>：当一条数据影响多条数据的时候使用，例：搜索数据</p><h2 id="组件中的data为什么是一个函数？"><a href="#组件中的data为什么是一个函数？" class="headerlink" title="组件中的data为什么是一个函数？"></a>组件中的data为什么是一个函数？</h2><p>1.一个组件被复用多次的话，也就会创建多个实例。本质上，这些实例用的都是同一个构造函数。 2.如果data是对象的话，对象属于引用类型，会影响到所有的实例。所以为了保证组件不同的实例之间data不冲突，data必须是一个函数。 </p><h2 id="为什么v-for和v-if不建议用在一起"><a href="#为什么v-for和v-if不建议用在一起" class="headerlink" title="为什么v-for和v-if不建议用在一起"></a>为什么v-for和v-if不建议用在一起</h2><p>1.当 v-for 和 v-if 处于同一个节点时，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。如果要遍历的数组很大，而真正要展示的数据很少时，这将造成很大的性能浪费（Vue2.x）<br> 2.这种场景建议使用 computed，先对数据进行过滤</p><p>注意：3.x 版本中 <code>v-if</code> 总是优先于 <code>v-for</code> 生效。由于语法上存在歧义，建议避免在同一元素上同时使用两者。比起在模板层面管理相关逻辑，更好的办法是通过创建计算属性筛选出列表，并以此创建可见元素。</p><h2 id="React-x2F-Vue-项目中-key-的作用"><a href="#React-x2F-Vue-项目中-key-的作用" class="headerlink" title="React&#x2F;Vue 项目中 key 的作用"></a>React&#x2F;Vue 项目中 key 的作用</h2><ul><li>key的作用是为了在diff算法执行时更快的找到对应的节点，<code>提高diff速度，更高效的更新虚拟DOM</code>;</li></ul><p>vue和react都是采用diff算法来对比新旧虚拟节点，从而更新节点。在vue的diff函数中，会根据新节点的key去对比旧节点数组中的key，从而找到相应旧节点。如果没找到就认为是一个新增节点。而如果没有key，那么就会采用遍历查找的方式去找到对应的旧节点。一种一个map映射，另一种是遍历查找。相比而言。map映射的速度更快。</p><ul><li>为了在数据变化时强制更新组件，以避免<code>“就地复用”</code>带来的副作用。</li></ul><p>当 Vue.js 用 <code>v-for</code> 更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序，而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。重复的key会造成渲染错误。</p><h2 id="vue组件的通信方式"><a href="#vue组件的通信方式" class="headerlink" title="vue组件的通信方式"></a>vue组件的通信方式</h2><ul><li><code>props</code>&#x2F;<code>$emit</code> 父子组件通信</li></ul><p>父-&gt;子<code>props</code>，子-&gt;父 <code>$on、$emit</code> 获取父子组件实例 <code>parent、children</code> <code>Ref </code>获取实例的方式调用组件的属性或者方法 父-&gt;子孙 <code>Provide、inject</code> 官方不推荐使用，但是写组件库时很常用</p><ul><li><code>$emit</code>&#x2F;<code>$on</code> 自定义事件 兄弟组件通信</li></ul><p><code>Event Bus</code> 实现跨组件通信 <code>Vue.prototype.$bus = new Vue()</code> 自定义事件</p><ul><li>vuex 跨级组件通信</li></ul><p>Vuex、<code>$attrs、$listeners</code> <code>Provide、inject</code></p><h2 id="nextTick的实现"><a href="#nextTick的实现" class="headerlink" title="nextTick的实现"></a>nextTick的实现</h2><ol><li><code>nextTick</code>是<code>Vue</code>提供的一个全局<code>API</code>,是在下次<code>DOM</code>更新循环结束之后执行延迟回调，在修改数据之后使用<code>$nextTick</code>，则可以在回调中获取更新后的<code>DOM</code>；</li><li>Vue在更新DOM时是异步执行的。只要侦听到数据变化，<code>Vue</code>将开启1个队列，并缓冲在同一事件循环中发生的所有数据变更。如果同一个<code>watcher</code>被多次触发，只会被推入到队列中-次。这种在缓冲时去除重复数据对于避免不必要的计算和<code>DOM</code>操作是非常重要的。<code>nextTick</code>方法会在队列中加入一个回调函数，确保该函数在前面的dom操作完成后才调用；</li><li>比如，我在干什么的时候就会使用nextTick，传一个回调函数进去，在里面执行dom操作即可；</li><li>我也有简单了解<code>nextTick</code>实现，它会在<code>callbacks</code>里面加入我们传入的函数，然后用<code>timerFunc</code>异步方式调用它们，首选的异步方式会是<code>Promise</code>。这让我明白了为什么可以在<code>nextTick</code>中看到<code>dom</code>操作结果。</li></ol><h2 id="nextTick的实现原理是什么？"><a href="#nextTick的实现原理是什么？" class="headerlink" title="nextTick的实现原理是什么？"></a>nextTick的实现原理是什么？</h2><p>在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后立即使用 nextTick 来获取更新后的 DOM。 nextTick主要使用了宏任务和微任务。 根据执行环境分别尝试采用Promise、MutationObserver、setImmediate，如果以上都不行则采用setTimeout定义了一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列。</p><h2 id="使用过插槽么？用的是具名插槽还是匿名插槽或作用域插槽"><a href="#使用过插槽么？用的是具名插槽还是匿名插槽或作用域插槽" class="headerlink" title="使用过插槽么？用的是具名插槽还是匿名插槽或作用域插槽"></a>使用过插槽么？用的是具名插槽还是匿名插槽或作用域插槽</h2><p>vue中的插槽是一个非常好用的东西slot说白了就是一个占位的 在vue当中插槽包含三种一种是默认插槽（匿名）一种是具名插槽还有一种就是作用域插槽 匿名插槽就是没有名字的只要默认的都填到这里具名插槽指的是具有名字的 </p><h2 id="keep-alive的实现"><a href="#keep-alive的实现" class="headerlink" title="keep-alive的实现"></a>keep-alive的实现</h2><p>作用：实现组件缓存，保持这些组件的状态，以避免反复渲染导致的性能问题。 需要缓存组件 频繁切换，不需要重复渲染</p><p>场景：tabs标签页 后台导航，vue性能优化</p><p>原理：<code>Vue.js</code>内部将<code>DOM</code>节点抽象成了一个个的<code>VNode</code>节点，<code>keep-alive</code>组件的缓存也是基于<code>VNode</code>节点的而不是直接存储<code>DOM</code>结构。它将满足条件<code>（pruneCache与pruneCache）</code>的组件在<code>cache</code>对象中缓存起来，在需要重新渲染的时候再将<code>vnode</code>节点从<code>cache</code>对象中取出并渲染。</p><h2 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h2><p>mixin 项目变得复杂的时候，多个组件间有重复的逻辑就会用到mixin<br> 多个组件有相同的逻辑，抽离出来<br> mixin并不是完美的解决方案，会有一些问题<br> vue3提出的Composition API旨在解决这些问题【追求完美是要消耗一定的成本的，如开发成本】<br> 场景：PC端新闻列表和详情页一样的右侧栏目，可以使用mixin进行混合<br> 劣势：1.变量来源不明确，不利于阅读<br> 2.多mixin可能会造成命名冲突 3.mixin和组件可能出现多对多的关系，使得项目复杂度变高</p><h2 id="Vuex的理解及使用场景"><a href="#Vuex的理解及使用场景" class="headerlink" title="Vuex的理解及使用场景"></a>Vuex的理解及使用场景</h2><p>Vuex 是一个专为 Vue 应用程序开发的状态管理模式。每一个 Vuex 应用的核心就是 store（仓库）。</p><ol><li>Vuex 的状态存储是响应式的；当 Vue 组件从 store 中读取状态的时候，</li></ol><p>若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新 2. 改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation， 这样使得我们可以方便地跟踪每一个状态的变化 Vuex主要包括以下几个核心模块：</p><ol><li>State：定义了应用的状态数据</li><li>Getter：在 store 中定义“getter”（可以认为是 store 的计算属性），</li></ol><p>就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来， 且只有当它的依赖值发生了改变才会被重新计算 3. Mutation：是唯一更改 store 中状态的方法，且必须是同步函数 4. Action：用于提交 mutation，而不是直接变更状态，可以包含任意异步操作 5. Module：允许将单一的 Store 拆分为多个 store 且同时保存在单一的状态树中</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue2基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> watch和computed </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue生命周期的理解</title>
+      <link href="/2023/02/16/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+      <url>/2023/02/16/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>每个<code>Vue</code>实例在创建时都会经过一系列的初始化过程，<code>vue</code>的生命周期钩子，就是说在达到某一阶段或条件时去触发的函数，目的就是为了完成一些动作或者事件</p><ul><li><code>create阶段</code>：vue实例被创建<br> <code>beforeCreate</code>: 创建前，此时data和methods中的数据都还没有初始化<br> <code>created</code>： 创建完毕，data中有值，未挂载</li><li><code>mount阶段</code>： vue实例被挂载到真实DOM节点<br> <code>beforeMount</code>：可以发起服务端请求，去数据<br> <code>mounted</code>: 此时可以操作DOM</li><li><code>update阶段</code>：当vue实例里面的data数据变化时，触发组件的重新渲染<br> <code>beforeUpdate</code> :更新前<br> <code>updated</code>：更新后</li><li><code>destroy阶段</code>：vue实例被销毁<br> <code>beforeDestroy</code>：实例被销毁前，此时可以手动销毁一些方法<br> <code>destroyed</code>:销毁后</li></ul><p> 组件生命周期</p><p>生命周期（父子组件） 父组件beforeCreate –&gt; 父组件created –&gt; 父组件beforeMount –&gt; 子组件beforeCreate –&gt; 子组件created –&gt; 子组件beforeMount –&gt; 子组件 mounted –&gt; 父组件mounted –&gt;父组件beforeUpdate –&gt;子组件beforeDestroy–&gt; 子组件destroyed –&gt; 父组件updated</p><p><strong>加载渲染过程</strong> 父beforeCreate-&gt;父created-&gt;父beforeMount-&gt;子beforeCreate-&gt;子created-&gt;子beforeMount-&gt;子mounted-&gt;父mounted</p><p><strong>挂载阶段</strong> 父created-&gt;子created-&gt;子mounted-&gt;父mounted</p><p><strong>父组件更新阶段</strong> 父beforeUpdate-&gt;父updated</p><p><strong>子组件更新阶段</strong> 父beforeUpdate-&gt;子beforeUpdate-&gt;子updated-&gt;父updated</p><p><strong>销毁阶段</strong> 父beforeDestroy-&gt;子beforeDestroy-&gt;子destroyed-&gt;父destroyed</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue生命周期 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue生命周期 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue底层实现原理</title>
+      <link href="/2023/02/16/vue%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/"/>
+      <url>/2023/02/16/vue%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Vue底层实现原理"><a href="#Vue底层实现原理" class="headerlink" title="Vue底层实现原理"></a>Vue底层实现原理</h3><p>vue.js是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter和getter，在数据变动时发布消息给订阅者，触发相应的监听回调<br> Vue是一个典型的MVVM框架，模型（Model）只是普通的javascript对象，修改它则试图（View）会自动更新。这种设计让状态管理变得非常简单而直观</p><p><strong>Observer（数据监听器）</strong> : Observer的核心是通过Object.defineProprtty()来监听数据的变动，这个函数内部可以定义setter和getter，每当数据发生变化，就会触发setter。这时候Observer就要通知订阅者，订阅者就是Watcher</p><p><strong>Watcher（订阅者）</strong> : Watcher订阅者作为Observer和Compile之间通信的桥梁，主要做的事情是：</p><ol><li>在自身实例化时往属性订阅器(dep)里面添加自己</li><li>自身必须有一个update()方法</li><li>待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调</li></ol><p><strong>Compile（指令解析器）</strong> : Compile主要做的事情是解析模板指令，将模板中变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加鉴定数据的订阅者，一旦数据有变动，收到通知，更新试图</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> js高级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue底层原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cookie和localStorage</title>
+      <link href="/2023/02/16/Cookie%E5%92%8ClocalStorage/"/>
+      <url>/2023/02/16/Cookie%E5%92%8ClocalStorage/</url>
+      
+        <content type="html"><![CDATA[<ol><li><ul><li><h2 id="Cookie、sessionStorage、localStorage-的区别"><a href="#Cookie、sessionStorage、localStorage-的区别" class="headerlink" title="Cookie、sessionStorage、localStorage 的区别"></a>Cookie、sessionStorage、localStorage 的区别</h2><p><strong>相同点</strong>：</p><ul><li>存储在客户端</li></ul><p><strong>不同点</strong>：</p></li></ul></li></ol><ul><li>cookie数据大小不能超过4k；sessionStorage和localStorage的存储比cookie大得多，可以达到5M+</li><li>cookie设置的过期时间之前一直有效；localStorage永久存储，浏览器关闭后数据不丢失除非主动删除数据；sessionStorage数据在当前浏览器窗口关闭后自动删除</li><li>cookie的数据会自动的传递到服务器；sessionStorage和localStorage数据保存在本地</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> js高级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Cookie和localStorage </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http和https</title>
+      <link href="/2023/02/16/http/"/>
+      <url>/2023/02/16/http/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP-和-HTTPS"><a href="#HTTP-和-HTTPS" class="headerlink" title="HTTP 和 HTTPS"></a>HTTP 和 HTTPS</h1><h2 id="http-和-https-的基本概念"><a href="#http-和-https-的基本概念" class="headerlink" title="http 和 https 的基本概念"></a>http 和 https 的基本概念</h2><p>http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。</p><p> https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性。</p><h2 id="http-和-https-的区别及优缺点？"><a href="#http-和-https-的区别及优缺点？" class="headerlink" title="http 和 https 的区别及优缺点？"></a>http 和 https 的区别及优缺点？</h2><ul><li>http 是超文本传输协议，信息是明文传输，HTTPS 协议要比 http 协议<code>安全</code>，https 是具有安全性的 ssl 加密传输协议，可防止数据在传输过程中被窃取、改变，确保数据的完整性(当然这种安全性并非绝对的，对于更深入的 Web 安全问题，此处暂且不表)。</li><li>http 协议的<code>默认端口</code>为 80，https 的默认端口为 443。</li><li>http 的连接很简单，是无状态的。https 握手阶段比较<code>费时</code>，会使页面加载时间延长 50%，增加 10%~20%的耗电。</li><li>https <code>缓存</code>不如 http 高效，会增加数据开销。</li><li>Https 协议需要 ca 证书，费用较高，功能越强大的<code>证书费</code>用越高。</li><li>SSL 证书需要绑定 <code>IP</code>，不能再同一个 IP 上绑定多个域名，IPV4 资源支持不了这种消耗。</li></ul><h2 id="https-协议的工作原理"><a href="#https-协议的工作原理" class="headerlink" title="https 协议的工作原理"></a>https 协议的工作原理</h2><p>客户端在使用 HTTPS 方式与 Web 服务器通信时有以下几个步骤：</p><ol><li>客户端使用 https url 访问服务器，则要求 web 服务器<code>建立 ssl 链接</code>。</li><li>web 服务器接收到客户端的请求之后，会<code>将网站的证书（证书中包含了公钥），传输给客户端</code>。</li><li>客户端和 web 服务器端开始<code>协商 SSL 链接的安全等级</code>，也就是加密等级。</li><li>客户端浏览器通过双方协商一致的安全等级，<code>建立会话密钥</code>，然后通过网站的公钥来加密会话密钥，并传送给网站。</li><li>web 服务器<code>通过自己的私钥解密出会话密钥</code>。</li><li>web 服务器<code>通过会话密钥加密与客户端之间的通信</code>。</li></ol><h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><p>第一次握手：<code>建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认</code>；SYN：同步序列编号（Synchronize Sequence Numbers）。</p><p>第二次握手：<code>服务器收到syn包并确认客户的SYN</code>（ack&#x3D;j+1），<code>同时也发送一个自己的SYN包</code>（syn&#x3D;k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p><p>第三次握手：<code>客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1）</code>，此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。</p><h2 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a>TCP 四次挥手</h2><ol><li><code>客户端进程发出连接释放报文</code>，并且停止发送数据。释放数据报文首部，FIN&#x3D;1，其序列号为seq&#x3D;u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，<code>客户端进入FIN-WAIT-1（终止等待1）状态</code>。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。</li><li><code>服务器收到连接释放报文，发出确认报文</code>，ACK&#x3D;1，ack&#x3D;u+1，并且带上自己的序列号seq&#x3D;v，此时，<code>服务端就进入了CLOSE-WAIT（关闭等待）状态</code>。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。</li><li>客户端收到服务器的确认请求后，此时，<code>客户端就进入FIN-WAIT-2（终止等待2）状态</code>，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最 后的数据）。</li><li><code>服务器将最后的数据发送完毕后，就向客户端发送连接释放报文</code>，FIN&#x3D;1，ack&#x3D;u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq&#x3D;w，此时，<code>服务器就进入了LAST-ACK（最后确认）状态</code>，等待客户端的确认。</li><li><code>客户端收到服务器的连接释放报文后，必须发出确认</code>，ACK&#x3D;1，ack&#x3D;w+1，而自己的序列号是seq&#x3D;u+1，此时，<code>客户端就进入了TIME-WAIT（时间等待）状态</code>。注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，<code>当客户端撤销相应的TCB后，才进入CLOSED状态</code>。</li><li>服务器只要收到了客户端发出的确认，<code>立即进入CLOSED状态</code>。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，<code>服务器结束TCP连接的时间要比客户端早一些</code>。</li></ol><h2 id="TCP-x2F-IP-x2F-如何保证数据包传输的有序可靠"><a href="#TCP-x2F-IP-x2F-如何保证数据包传输的有序可靠" class="headerlink" title="TCP&#x2F;IP &#x2F; 如何保证数据包传输的有序可靠"></a>TCP&#x2F;IP &#x2F; 如何保证数据包传输的有序可靠</h2><p>对字节流分段并进行编号然后<code>通过 ACK 回复</code>和<code>超时重发</code>这两个机制来保证。</p><ol><li>为了保证数据包的可靠传递，发送方必须把已发送的数据包保留在缓冲区；</li><li>并为每个已发送的数据包启动一个超时定时器；</li><li>如在定时器超时之前收到了对方发来的应答信息（可能是对本包的应答，也可以是对本包后续包的应答），则释放该数据包占用的缓冲区;</li><li>否则，重传该数据包，直到收到应答或重传次数超过规定的最大次数为止。</li><li>接收方收到数据包后，先进行CRC校验，如果正确则把数据交给上层协议，然后给发送方发送一个累计应答包，表明该数据已收到，如果接收方正好也有数据要发给发送方，应答包也可方在数据包中捎带过去。</li></ol><h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><ol><li>TCP是面向<code>链接</code>的，而UDP是面向无连接的。</li><li>TCP仅支持<code>单播传输</code>，UDP 提供了单播，多播，广播的功能。</li><li>TCP的三次握手保证了连接的<code>可靠性</code>; UDP是无连接的、不可靠的一种数据传输协议，首先不可靠性体现在无连接上，通信都不需要建立连接，对接收到的数据也不发送确认信号，发送端不知道数据是否会正确接收。</li><li>UDP的<code>头部开销</code>比TCP的更小，数据<code>传输速率更高</code>，<code>实时性更好</code>。</li></ol><h2 id="HTTP-请求跨域问题"><a href="#HTTP-请求跨域问题" class="headerlink" title="HTTP 请求跨域问题"></a>HTTP 请求跨域问题</h2><ol><li><p>跨域的原理</p><p><strong>跨域</strong>，是指浏览器不能执行其他网站的脚本。它是由浏览器的<code>同源策略</code>造成的。<br> <strong>同源策略</strong>,是浏览器对 JavaScript 实施的安全限制，只要<code>协议、域名、端口</code>有任何一个不同，都被当作是不同的域。<br> <strong>跨域原理</strong>，即是通过各种方式，<code>避开浏览器的安全限制</code>。</p></li><li><p>解决方案</p><p>最初做项目的时候，使用的是jsonp，但存在一些问题，使用get请求不安全，携带数据较小，后来也用过iframe，但只有主域相同才行，也是存在些问题，后来通过了解和学习发现使用代理和proxy代理配合起来使用比较方便，就引导后台按这种方式做下服务器配置，在开发中使用proxy，在服务器上使用nginx代理，这样开发过程中彼此都方便，效率也高；现在h5新特性还有 windows.postMessage()</p><ul><li><p><strong>JSONP</strong>：<br> ajax 请求受同源策略影响，不允许进行跨域请求，而 script 标签 src 属性中的链 接却可以访问跨域的 js 脚本，利用这个特性，服务端不再返回 JSON 格式的数据，而是 返回一段调用某个函数的 js 代码，在 src 中进行了调用，这样实现了跨域。</p><p>步骤：</p><ol><li>去创建一个script标签</li><li>script的src属性设置接口地址</li><li>接口参数，必须要带一个自定义函数名，要不然后台无法返回数据</li><li>通过定义函数名去接受返回的数据</li></ol> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//动态创建 script</span><br><span class="line">var script = document.createElement(&#x27;script&#x27;);</span><br><span class="line"></span><br><span class="line">// 设置回调函数</span><br><span class="line">function getData(data) &#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//设置 script 的 src 属性，并设置请求地址</span><br><span class="line">script.src = &#x27;http://localhost:3000/?callback=getData&#x27;;</span><br><span class="line"></span><br><span class="line">// 让 script 生效</span><br><span class="line">document.body.appendChild(script);</span><br></pre></td></tr></table></figure><ul><li><p><strong>JSONP 的缺点</strong>:<br> JSON 只支持 get，因为 script 标签只能使用 get 请求； JSONP 需要后端配合返回指定格式的数据。</p><p><strong>document.domain</strong> 基础域名相同 子域名不同</p><p><strong>window.name</strong> 利用在一个浏览器窗口内，载入所有的域名都是共享一个window.name</p><p><strong>CORS</strong> CORS(Cross-origin resource sharing)跨域资源共享 服务器设置对CORS的支持原理：服务器设置Access-Control-Allow-Origin HTTP响应头之后，浏览器将会允许跨域请求</p><p><strong>proxy代理</strong> 目前常用方式,通过服务器设置代理</p><p><strong>window.postMessage()</strong> 利用h5新特性window.postMessage()</p></li></ul><h2 id="粘包问题分析与对策"><a href="#粘包问题分析与对策" class="headerlink" title="粘包问题分析与对策"></a>粘包问题分析与对策</h2></li></ul></li></ol><p>TCP粘包是指发送方发送的若干包数据到接收方接收时粘成一包，从接收缓冲区看，后一包数据的头紧接着前一包数据的尾。 </p><h4 id="粘包出现原因"><a href="#粘包出现原因" class="headerlink" title="粘包出现原因"></a><strong>粘包出现原因</strong></h4><p>简单得说，在流传输中出现，UDP不会出现粘包，因为它有<strong>消息边界</strong></p><p>粘包情况有两种，一种是<code>粘在一起的包都是完整的数据包</code>，另一种情况是<code>粘在一起的包有不完整的包</code>。</p><p>为了<strong>避免粘包</strong>现象，可采取以下几种措施：</p><ol><li><p>对于发送方引起的粘包现象，用户可通过编程设置来避免，<code>TCP提供了强制数据立即传送的操作指令push</code>，TCP软件收到该操作指令后，就立即将本段数据发送出去，而不必等待发送缓冲区满；</p></li><li><p>对于接收方引起的粘包，则可通过优化程序设计、精简接收进程工作量、<code>提高接收进程优先级等措施</code>，使其及时接收数据，从而尽量避免出现粘包现象；</p></li><li><p>由接收方控制，将一包数据按结构字段，人为控制分多次接收，然后合并，通过这种手段来避免粘包。<code>分包多发</code>。</p><ul><li>以上提到的三种措施，都有其不足之处。</li><li>第一种编程设置方法虽然可以避免发送方引起的粘包，但它关闭了优化算法，降低了网络发送效率，影响应用程序的性能，一般不建议使用。</li><li>第二种方法只能减少出现粘包的可能性，但并不能完全避免粘包，当发送频率较高时，或由于网络突发可能使某个时间段数据包到达接收方较快，接收方还是有可能来不及接收，从而导致粘包。</li><li>第三种方法虽然避免了粘包，但应用程序的效率较低，对实时应用的场合不适合。</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> js网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http和https </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>本命年生日</title>
       <link href="/2023/02/15/%E6%9C%AC%E5%91%BD%E5%B9%B4%E7%94%9F%E6%97%A5/"/>
       <url>/2023/02/15/%E6%9C%AC%E5%91%BD%E5%B9%B4%E7%94%9F%E6%97%A5/</url>
@@ -102,7 +227,7 @@
       <link href="/2023/02/14/%E9%97%AD%E5%8C%85/"/>
       <url>/2023/02/14/%E9%97%AD%E5%8C%85/</url>
       
-        <content type="html"><![CDATA[<h1 id="你是如何理解闭包的-闭包到底是什么"><a href="#你是如何理解闭包的-闭包到底是什么" class="headerlink" title="你是如何理解闭包的,闭包到底是什么?"></a>你是如何理解闭包的,闭包到底是什么?</h1><ul><li><p>什么是闭包？ </p><p>⼀个普通的函数function，如果它可以访问外层作⽤域的⾃由变量，那么这个函数和周围环境就是⼀个闭包。 </p><p>从狭义的⻆度来说：JavaScript中⼀个函数，如果访问了外层作⽤域的变量，那么它是⼀个闭包</p></li><li><p>应⽤场景 </p><p>防抖 、节流 、⽴即执⾏函数 、组合函数等等</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="你是如何理解闭包的-闭包到底是什么"><a href="#你是如何理解闭包的-闭包到底是什么" class="headerlink" title="你是如何理解闭包的,闭包到底是什么?"></a>你是如何理解闭包的,闭包到底是什么?</h1><ul><li><p>什么是闭包？ </p><p>⼀个普通的函数function，如果它可以访问外层作⽤域的⾃由变量，那么这个函数和周围环境就是⼀个闭包。 </p><p>从狭义的⻆度来说：JavaScript中⼀个函数，如果访问了外层作⽤域的变量，那么它是⼀个闭包</p></li><li><p>应⽤场景 </p><p>防抖 、节流 、⽴即执⾏函数 、组合函数等等 </p><h2 id="闭包的概念"><a href="#闭包的概念" class="headerlink" title="闭包的概念"></a>闭包的概念</h2><ul><li><p>函数执行时形成的私有上下文EC(FN)，正常情况下，代码执行完会出栈后释放;但是特殊情况下，如果当前私有上下文中的某个东西被上下文以外的事物占用了，则上下文不会出栈释放，从而形成不销毁的上下文。 函数执行函数执行过程中，会形成一个全新的私有上下文，可能会被释放，可能不会被释放，不论释放与否，他的作用是：</p></li><li><p>保护：划分一个独立的代码执行区域，在这个区域中有自己私有变量存储的空间，保护自己的私有变量不受外界干扰（操作自己的私有变量和外界没有关系</p></li><li><p>保存：如果当前上下文不被释放【只要上下文中的某个东西被外部占用即可】，则存储的这些私有变量也不会被释放，可以供其下级上下文中调取使用，相当于把一些值保存起来了；</p><p>我们把函数执行形成私有上下文，来保护和保存私有变量机制称为<code>闭包</code>。</p></li></ul><h4 id="稍全面的回答："><a href="#稍全面的回答：" class="headerlink" title="稍全面的回答："></a><strong>稍全面的回答</strong>：</h4><p> 在js中变量的作用域属于函数作用域, 在函数执行完后,作用域就会被清理,内存也会随之被回收,但是由于闭包函数是建立在函数内部的子函数, 由于其可访问上级作用域,即使上级函数执行完, 作用域也不会随之销毁, 这时的子函数(也就是闭包),便拥有了访问上级作用域中变量的权限,即使上级函数执行完后作用域内的值也不会被销毁。</p><h4 id="闭包的特性："><a href="#闭包的特性：" class="headerlink" title="闭包的特性："></a><strong>闭包的特性</strong>：</h4><ul><li><p>1、内部函数可以访问定义他们外部函数的参数和变量。(作用域链的向上查找，把外围的作用域中的变量值存储在内存中而不是在函数调用完毕后销毁)设计私有的方法和变量，避免全局变量的污染。</p><p>1.1.闭包是密闭的容器，，类似于set、map容器，存储数据的</p><p>1.2.闭包是一个对象，存放数据的格式为 key-value 形式</p></li><li><p>2、函数嵌套函数</p></li><li><p>3、本质是将函数内部和外部连接起来。优点是可以读取函数内部的变量，让这些变量的值始终保存在内存中，不会在函数被调用之后自动清除</p></li></ul><ul><li><p><strong>闭包形成的条件</strong>：</p><ol><li>函数的嵌套</li><li>内部函数引用外部函数的局部变量，延长外部函数的变量生命周期</li></ol></li><li><p><strong>闭包的用途</strong>：</p><ol><li>模仿块级作用域</li><li>保护外部函数的变量 能够访问函数定义时所在的词法作用域(阻止其被回收)</li><li>封装私有化变量</li><li>创建模块</li></ol></li></ul></li><li><ol><li><strong>闭包应用场景</strong></li></ol><p>闭包的两个场景，闭包的两大作用：<code>保存/保护</code>。 在开发中, 其实我们随处可见闭包的身影, 大部分前端JavaScript 代码都是“事件驱动”的,即一个事件绑定的回调方法; 发送ajax请求成功|失败的回调;setTimeout的延时回调;或者一个函数内部返回另一个匿名函数,这些都是闭包的应用。</p></li><li><p><strong>闭包的优点</strong>：</p><p>延长局部变量的生命周期</p></li><li><p><strong>闭包缺点</strong>：</p><p>会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏</p></li></ul>]]></content>
       
       
       <categories>
