@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>gitReset</title>
+      <link href="/2023/03/14/gitReset/"/>
+      <url>/2023/03/14/gitReset/</url>
+      
+        <content type="html"><![CDATA[<p>Git 提供了多种方法回滚代码，下面简单介绍两个主要方法：</p><p>方法一：使用 <code>git reset</code> 命令</p><ol><li>首先打开命令行工具（例如 Git Bash）并进入本地仓库所在目录。</li><li>执行命令 <code>git log</code> 查看提交历史，找到需要回滚的提交的 ID。</li><li>执行命令 <code>git reset --hard 提交 ID</code> 回滚代码。</li></ol><p>方法二：使用 <code>git revert</code> 命令</p><ol><li>首先打开命令行工具（例如 Git Bash）并进入本地仓库所在目录。</li><li>执行命令 <code>git log</code> 查看提交历史，找到需要回滚的提交的 ID。</li><li>执行命令 <code>git revert 提交 ID</code> 回滚代码。</li></ol><p>注：使用 <code>reset</code> 命令实质是将 HEAD 指针指向指定提交，以及替换工作目录中的文件，因此会直接删除本地所有该提交之后的提交，慎用。而 <code>revert</code> 命令则是针对单个提交撤销其所做出的修改，生成一个新的提交，属于“反操作”，不会影响当前分支的提交历史。</p><p>Git 是一款分布式版本控制系统，提供了很多命令来管理代码仓库，下面是 Git 最常用的一些命令：</p><ol><li><code>git init</code> 初始化本地代码仓库；</li><li><code>git status</code> 查看工作区和暂存区状态；</li><li><code>git add &lt;file&gt;</code> 将工作区修改的文件添加到暂存区；</li><li><code>git commit -m &lt;message&gt;</code> 将暂存区的文件提交到本地仓库，并写入提交信息；</li><li><code>git log</code> 查看提交历史；</li><li><code>git push</code> 将本地仓库代码推送到远程仓库；</li><li><code>git pull</code> 从远程仓库拉取最新代码到本地；</li><li><code>git clone &lt;url&gt;</code> 克隆远程仓库到本地；</li><li><code>git branch</code> 查看当前本地分支，有哪些分支；</li><li><code>git checkout &lt;branch-name&gt;</code> 切换分支；</li><li><code>git merge &lt;branch-name&gt;</code> 将一个分支的代码合并到当前分支；</li><li><code>git reset &lt;commit&gt;</code> 恢复到之前的某个提交；</li><li><code>git revert &lt;commit&gt;</code> 撤销某次提交所做的修改；</li><li><code>git fetch</code> 从远程仓库获取最新改动，但不自动合并到本地分支；</li><li><code>git rename &lt;oldname&gt; &lt;newname&gt;</code> 修改文件名。</li></ol><p>这些命令可以让开发者轻松地管理代码仓库、同步代码和版本控制。学会了 Git 常用命令之后，就可以更加高效地进行开发和协作。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>回流与重绘</title>
       <link href="/2023/03/08/%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98/"/>
       <url>/2023/03/08/%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98/</url>
