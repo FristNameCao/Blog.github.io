@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>line-height继承</title>
+      <link href="/2024/04/23/line-height%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9D%91/"/>
+      <url>/2024/04/23/line-height%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9D%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="line-height如何继承？"><a href="#line-height如何继承？" class="headerlink" title="line-height如何继承？"></a>line-height如何继承？</h1><h2 id="案例一如下"><a href="#案例一如下" class="headerlink" title="案例一如下"></a>案例一如下</h2><p>&#96;body  {</p><p>​font-size: 20px;</p><p>​line-height: 50px;</p><p>}</p><p>p {</p><p>font-size:16px;</p><p>}</p><body><p>​<p>这是一行文字</p></p></body><p>这时候p标签是50px</p><p>&#96; </p><h2 id="案例二如下"><a href="#案例二如下" class="headerlink" title="案例二如下"></a>案例二如下</h2><p>&#96;body  {</p><p>​font-size: 20px;</p><p>​line-height: 1.5;</p><p>}</p><p>p {</p><p>font-size:16px;</p><p>}</p><body><p>​<p>这是一行文字</p></p></body><p>这时候p标签是24px  </p><p>怎么来的呢？</p><p>就是1.5*16拿到的</p><p>&#96; </p><h2 id="案例三"><a href="#案例三" class="headerlink" title="案例三"></a>案例三</h2><p>&#96;body  {</p><p>​font-size: 20px;</p><p>​line-height: 200%;</p><p>}</p><p>p {</p><p>font-size:16px;</p><p>}</p><body><p>​<p>这是一行文字</p></p></body><p>这时候p标签是40px  </p><p>怎么来的呢？</p><p>就是20*200%拿到的，这个地方是先算完之后在去继承的，这里就是这个百分比坑</p><p>&#96; </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是cookie</title>
+      <link href="/2024/03/11/%E4%BB%80%E4%B9%88%E6%98%AFcookie/"/>
+      <url>/2024/03/11/%E4%BB%80%E4%B9%88%E6%98%AFcookie/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是cookie"><a href="#什么是cookie" class="headerlink" title="什么是cookie"></a>什么是cookie</h1><ul><li>存储在浏览器的一段字符串(最大5kb)</li><li>跨域不共享（浏览器为每一个浏览器存储了cookie）</li><li>格式如k1&#x3D;v1;k2&#x3D;v2;k3&#x3D;v3;因此可以存储结构化数据</li><li>每次发送http请求，会将请求域的cookie一起发送给server</li><li>server可以修改cookie并且返回给浏览器</li><li>浏览器也可以通过JavaScript修改cookie(有限制)</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> js基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Map和Set应用场景</title>
       <link href="/2024/03/02/Map%E5%92%8CSet%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
       <url>/2024/03/02/Map%E5%92%8CSet%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/</url>
