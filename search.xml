@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>大屏自适应</title>
+      <link href="/2024/04/27/%E5%A4%A7%E5%B1%8F%E8%87%AA%E9%80%82%E5%BA%94/"/>
+      <url>/2024/04/27/%E5%A4%A7%E5%B1%8F%E8%87%AA%E9%80%82%E5%BA%94/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何做大屏自适应"><a href="#如何做大屏自适应" class="headerlink" title="如何做大屏自适应"></a>如何做大屏自适应</h1><p><code>export function autoScale(selector, options) &#123;</code><br> <code>   // 这里定义了一个 debounce 函数，用于限制函数在一定时间内只能触发一次</code><br>  <code> function debounce(fn, delay) &#123;</code><br>    <code>    let timer = null;</code><br>        <code>return function () &#123;</code><br>   <code>         // 每次函数被调用时，清除之前的定时器</code><br>        <code>    if (timer) clearTimeout(timer);</code><br>          <code>  // 创建一个新的定时器，在指定的延迟后执行传入的函数</code><br>          <code>  timer = setTimeout(fn, delay);</code><br>     <code>   &#125;</code><br><code>   &#125;</code></p><pre><code>// 这里定义了 autoScale 函数，用于根据指定的宽高比例调整元素的大小和位置// 首先获取指定选择器对应的元素const el = document.querySelector(selector);// 从传入的参数 options 中获取目标宽度和高度const &#123; width, height &#125; = options;// 设置元素变换的原点为左上角el.style.transformOrigin = &#39;top left&#39;;// 设置元素的过渡效果，以便在缩放时产生平滑的动画el.style.transition = &#39;transform .5s&#39;;// 定义一个初始化函数，用于计算并设置元素的缩放和位置function init() &#123;    // 计算水平和垂直方向上的缩放比例，取两者中较小的值    const scaleX = innerWidth / width;    const scaleY = innerHeight / height;    const scale = Math.min(scaleX, scaleY);    // 计算使元素居中显示的偏移量    const left = (innerWidth - width * scale) / 2;    const top = (innerHeight - height * scale) / 2;    // 设置元素的变换，包括缩放和平移    el.style.transform = `translate($&#123;left&#125;px, $&#123;top&#125;px) scale($&#123;scale&#125;)`;&#125;// 首次调用初始化函数，确保页面加载时元素已经按照指定比例进行了调整init();// 监听窗口大小变化事件，并使用 debounce 函数来控制频繁触发的 resize 事件addEventListener(&#39;resize&#39;, debounce(init, 200));</code></pre><p><code>&#125;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> js解决方案 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大屏自适应 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>line-height继承</title>
       <link href="/2024/04/23/line-height%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9D%91/"/>
       <url>/2024/04/23/line-height%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9D%91/</url>
