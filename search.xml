@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>编码规范</title>
+      <link href="/2024/05/23/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+      <url>/2024/05/23/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+      
+        <content type="html"><![CDATA[<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>高质量代码的特点</p><ul><li><strong>严格编码规范</strong>（靠工具、流程，而非自觉）</li><li>合理、规范的注释</li><li>代码合理拆分</li></ul><h2 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h2><p>eslint prettier</p><ul><li>eslint 编码规范，如变量未定义（语法语义）</li><li>prettier 编码风格，如末尾是否用 <code>;</code></li><li>eslint 也有编码风格的功能，两者可能会有冲突</li></ul><h2 id="eslint"><a href="#eslint" class="headerlink" title="eslint"></a>eslint</h2><p>安装插件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin -save-dev</span><br></pre></td></tr></table></figure><p>初始化配置文件 <code>.eslint.js</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx eslint --init    ## 然后根据引导一步一步走</span><br></pre></td></tr></table></figure><p>解释：eslint <code>plugin</code> 与 <code>extend</code> 的区别：</p><ul><li><code>extend</code> 提供的是 eslint 现有规则的一系列预设</li><li><code>plugin</code> 则提供了除预设之外的自定义规则，当你在 eslint 的规则里找不到合适的的时候就可以借用插件来实现了</li></ul><p>安装 vscode 插件 <code>eslint</code> ，此时就可以看到代码 <code>App.txs</code> 中的错误提示（如定义一个未使用的变量）</p><p>在 <code>package.json</code> 中增加 scripts <code>&quot;lint&quot;: &quot; eslint &#39;src/**/*.+(js|ts|jsx|tsx)&#39; &quot;</code> <br></p><p><code>如果上面那个有问题就配置这个&quot;lint&quot;: &quot;eslint \&quot;src/**/*.&#123;js,ts,jsx,tsx&#125;\&quot;&quot; </code></p><p>控制台运行 <code>npm run lint</code> 也可以看到错误提示。如果要自动修复，可以加 <code>--fix</code> 参数</p><h2 id="prettier"><a href="#prettier" class="headerlink" title="prettier"></a>prettier</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install prettier eslint-config-prettier eslint-plugin-prettier -save-dev</span><br></pre></td></tr></table></figure><ul><li><code>eslint-config-prettier</code> 禁用所有和 Prettier 产生<strong>冲突</strong>的规则</li><li><code>eslint-plugin-prettier</code> 把 Prettier 应用到 Eslint，配合 rules <code>&quot;prettier/prettier&quot;: &quot;error&quot;</code> 实现 Eslint 提醒。</li></ul><p>在 eslint 配置文件的 <code>extends</code> <strong>最后</strong> 增加 <code>&#39;plugin:prettier/recommended&#39;</code></p><p>安装 vscode 插件 <code>prettier</code> ，此时可以看到代码 <code>App.txs</code> 中的格式提示（如末尾是否使用 <code>;</code> ，或单引号、双引号）</p><p>在 <code>package.json</code> 中增加 scripts <code>&quot;format&quot;: &quot; prettier --write &#39;src/**/*.+(js|ts|jsx|tsx)&#39; &quot;</code> <br></p><p><code>如果上面那个有问题就配置这个&quot;format&quot;: &quot;prettier --write &#39;src/**/*.&#123;js,ts,jsx,tsx&#125;&#39;&quot; </code></p><p>控制台运行 <code>npm run format</code> 可以修复所有的格式错误</p><p>设置 vscode <code>.vscode/settings.json</code> 自动保存格式，可以在文件保存时，自动保留格式</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;editor.codeActionsOnSave&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;source.fixAll.eslint&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>增加配置文件 <code>.prettierrc.js</code> 规定自己的编码格式，运行 <code>npm run format</code> 可以看到效果，保存文件也可以看到效果。<br><br>【注意】如果此处没效果，可以<strong>重启 vscode</strong> 再重试。</p><hr><p>一直搞不定，重启 vscode 就好了。<br>在 vscode 搜“prettier” 插件时，发现一个 “reload required” 的提示，于是就重启了</p><p>CRA 创建的项目，配置文件是 <code>js</code> 格式<br>vite 创建的项目，配置文件是 <code>cjs</code> 格式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> js高级 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大屏自适应</title>
       <link href="/2024/04/27/%E5%A4%A7%E5%B1%8F%E8%87%AA%E9%80%82%E5%BA%94/"/>
       <url>/2024/04/27/%E5%A4%A7%E5%B1%8F%E8%87%AA%E9%80%82%E5%BA%94/</url>
