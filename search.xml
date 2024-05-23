@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2024/05/23/git%E8%A7%84%E8%8C%83/"/>
+      <url>/2024/05/23/git%E8%A7%84%E8%8C%83/</url>
+      
+        <content type="html"><![CDATA[<h1 id="提交到-git-仓库"><a href="#提交到-git-仓库" class="headerlink" title="提交到 git 仓库"></a>提交到 git 仓库</h1><p>PS：git 不会从 0 讲起</p><h2 id="选择平台"><a href="#选择平台" class="headerlink" title="选择平台"></a>选择平台</h2><ul><li>工作中，按照公司规定，可能有内网 git 仓库</li><li>正式的开源项目，需要积累 star ，可以考虑 github （但有时访问不稳定，不同网络环境不一样）</li><li>个人学习项目，尽量选择国内平台，速度快</li></ul><p>我选择 coding.net</p><h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin xxx</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h2 id="husky"><a href="#husky" class="headerlink" title="husky"></a>husky</h2><p>git-hook </p><p>安装依赖</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install husky -save-dev</span><br></pre></td></tr></table></figure><p>参考文档 <a href="https://github.com/typicode/husky">https://github.com/typicode/husky</a> 增加三个 <code>pre-commit</code> 命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm run lint</span><br><span class="line">npm run format</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure><p>可以故意制造一个错误：定义一个未使用变量（eslint 配置文件 <code>rules</code> 增加 <code>&#39;no-unused-vars&#39;: &#39;error&#39;,</code>）<br><br>然后执行 <code>git commit</code> 试试</p><h2 id="commit-lint"><a href="#commit-lint" class="headerlink" title="commit-lint"></a>commit-lint</h2><p>参考文档 <a href="https://github.com/conventional-changelog/commitlint#getting-started">https://github.com/conventional-changelog/commitlint#getting-started</a> 安装设置即可</p><p>commit 规则查看 <code>node_modules/@commitlint/config-conventional</code> （在 <code>commitlint.config.js</code> 中有配置）</p><p>尝试 <code>git commit -m &quot;test&quot;</code> 会失败，再尝试 <code>git commit -m &quot;chore: commit lint&quot;</code> 会成功</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>编码规范</title>
       <link href="/2024/05/23/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/"/>
       <url>/2024/05/23/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
